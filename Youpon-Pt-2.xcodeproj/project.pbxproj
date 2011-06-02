@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		85DA1F5613984D7D0020154F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DA1F5513984D7D0020154F /* UIKit.framework */; };
+		85DA1F5813984D7D0020154F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DA1F5713984D7D0020154F /* Foundation.framework */; };
+		85DA1F5A13984D7D0020154F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DA1F5913984D7D0020154F /* CoreGraphics.framework */; };
+		85DA1F5C13984D7D0020154F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DA1F5B13984D7D0020154F /* CoreData.framework */; };
+		85DA1F6213984D7D0020154F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1F6013984D7D0020154F /* InfoPlist.strings */; };
+		85DA1F6513984D7D0020154F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DA1F6413984D7D0020154F /* main.m */; };
+		85DA1F6813984D7D0020154F /* Youpon_Pt_2AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DA1F6713984D7D0020154F /* Youpon_Pt_2AppDelegate.m */; };
+		85DA1F6B13984D7D0020154F /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1F6913984D7D0020154F /* MainWindow.xib */; };
+		85DA1F6E13984D7D0020154F /* Youpon_Pt_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 85DA1F6C13984D7D0020154F /* Youpon_Pt_2.xcdatamodeld */; };
+		85DA1F7513984D7D0020154F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DA1F5513984D7D0020154F /* UIKit.framework */; };
+		85DA1F7613984D7D0020154F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DA1F5713984D7D0020154F /* Foundation.framework */; };
+		85DA1F7713984D7D0020154F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DA1F5913984D7D0020154F /* CoreGraphics.framework */; };
+		85DA1F7813984D7D0020154F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DA1F5B13984D7D0020154F /* CoreData.framework */; };
+		85DA1F8013984D7D0020154F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1F7E13984D7D0020154F /* InfoPlist.strings */; };
+		85DA1F8313984D7D0020154F /* Youpon_Pt_2Tests.h in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1F8213984D7D0020154F /* Youpon_Pt_2Tests.h */; };
+		85DA1F8513984D7D0020154F /* Youpon_Pt_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DA1F8413984D7D0020154F /* Youpon_Pt_2Tests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		85DA1F7913984D7D0020154F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85DA1F4813984D7D0020154F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85DA1F5013984D7D0020154F;
+			remoteInfo = "Youpon-Pt-2";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		85DA1F5113984D7D0020154F /* Youpon-Pt-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Youpon-Pt-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85DA1F5513984D7D0020154F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		85DA1F5713984D7D0020154F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		85DA1F5913984D7D0020154F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		85DA1F5B13984D7D0020154F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		85DA1F5F13984D7D0020154F /* Youpon-Pt-2-Info.plist */ = {isa = PBXFileReference; path = "Youpon-Pt-2-Info.plist"; sourceTree = "<group>"; };
+		85DA1F6113984D7D0020154F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		85DA1F6313984D7D0020154F /* Youpon-Pt-2-Prefix.pch */ = {isa = PBXFileReference; path = "Youpon-Pt-2-Prefix.pch"; sourceTree = "<group>"; };
+		85DA1F6413984D7D0020154F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		85DA1F6613984D7D0020154F /* Youpon_Pt_2AppDelegate.h */ = {isa = PBXFileReference; path = Youpon_Pt_2AppDelegate.h; sourceTree = "<group>"; };
+		85DA1F6713984D7D0020154F /* Youpon_Pt_2AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Youpon_Pt_2AppDelegate.m; sourceTree = "<group>"; };
+		85DA1F6A13984D7D0020154F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		85DA1F6D13984D7D0020154F /* Youpon_Pt_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Youpon_Pt_2.xcdatamodel; sourceTree = "<group>"; };
+		85DA1F7413984D7D0020154F /* Youpon-Pt-2Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Youpon-Pt-2Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85DA1F7D13984D7D0020154F /* Youpon-Pt-2Tests-Info.plist */ = {isa = PBXFileReference; path = "Youpon-Pt-2Tests-Info.plist"; sourceTree = "<group>"; };
+		85DA1F7F13984D7D0020154F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		85DA1F8113984D7D0020154F /* Youpon-Pt-2Tests-Prefix.pch */ = {isa = PBXFileReference; path = "Youpon-Pt-2Tests-Prefix.pch"; sourceTree = "<group>"; };
+		85DA1F8213984D7D0020154F /* Youpon_Pt_2Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Youpon_Pt_2Tests.h; sourceTree = "<group>"; };
+		85DA1F8413984D7D0020154F /* Youpon_Pt_2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Youpon_Pt_2Tests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		85DA1F4E13984D7D0020154F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85DA1F5613984D7D0020154F /* UIKit.framework in Frameworks */,
+				85DA1F5813984D7D0020154F /* Foundation.framework in Frameworks */,
+				85DA1F5A13984D7D0020154F /* CoreGraphics.framework in Frameworks */,
+				85DA1F5C13984D7D0020154F /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85DA1F7013984D7D0020154F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85DA1F7513984D7D0020154F /* UIKit.framework in Frameworks */,
+				85DA1F7613984D7D0020154F /* Foundation.framework in Frameworks */,
+				85DA1F7713984D7D0020154F /* CoreGraphics.framework in Frameworks */,
+				85DA1F7813984D7D0020154F /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		85DA1F4613984D7D0020154F = {
+			isa = PBXGroup;
+			children = (
+				85DA1F5D13984D7D0020154F /* Youpon-Pt-2 */,
+				85DA1F7B13984D7D0020154F /* Youpon-Pt-2Tests */,
+				85DA1F5413984D7D0020154F /* Frameworks */,
+				85DA1F5213984D7D0020154F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		85DA1F5213984D7D0020154F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				85DA1F5113984D7D0020154F /* Youpon-Pt-2.app */,
+				85DA1F7413984D7D0020154F /* Youpon-Pt-2Tests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		85DA1F5413984D7D0020154F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				85DA1F5513984D7D0020154F /* UIKit.framework */,
+				85DA1F5713984D7D0020154F /* Foundation.framework */,
+				85DA1F5913984D7D0020154F /* CoreGraphics.framework */,
+				85DA1F5B13984D7D0020154F /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85DA1F5D13984D7D0020154F /* Youpon-Pt-2 */ = {
+			isa = PBXGroup;
+			children = (
+				85DA1F6613984D7D0020154F /* Youpon_Pt_2AppDelegate.h */,
+				85DA1F6713984D7D0020154F /* Youpon_Pt_2AppDelegate.m */,
+				85DA1F6913984D7D0020154F /* MainWindow.xib */,
+				85DA1F6C13984D7D0020154F /* Youpon_Pt_2.xcdatamodeld */,
+				85DA1F5E13984D7D0020154F /* Supporting Files */,
+			);
+			path = "Youpon-Pt-2";
+			sourceTree = "<group>";
+		};
+		85DA1F5E13984D7D0020154F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				85DA1F5F13984D7D0020154F /* Youpon-Pt-2-Info.plist */,
+				85DA1F6013984D7D0020154F /* InfoPlist.strings */,
+				85DA1F6313984D7D0020154F /* Youpon-Pt-2-Prefix.pch */,
+				85DA1F6413984D7D0020154F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		85DA1F7B13984D7D0020154F /* Youpon-Pt-2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				85DA1F8213984D7D0020154F /* Youpon_Pt_2Tests.h */,
+				85DA1F8413984D7D0020154F /* Youpon_Pt_2Tests.m */,
+				85DA1F7C13984D7D0020154F /* Supporting Files */,
+			);
+			path = "Youpon-Pt-2Tests";
+			sourceTree = "<group>";
+		};
+		85DA1F7C13984D7D0020154F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				85DA1F7D13984D7D0020154F /* Youpon-Pt-2Tests-Info.plist */,
+				85DA1F7E13984D7D0020154F /* InfoPlist.strings */,
+				85DA1F8113984D7D0020154F /* Youpon-Pt-2Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		85DA1F5013984D7D0020154F /* Youpon-Pt-2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85DA1F8813984D7D0020154F /* Build configuration list for PBXNativeTarget "Youpon-Pt-2" */;
+			buildPhases = (
+				85DA1F4D13984D7D0020154F /* Sources */,
+				85DA1F4E13984D7D0020154F /* Frameworks */,
+				85DA1F4F13984D7D0020154F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Youpon-Pt-2";
+			productName = "Youpon-Pt-2";
+			productReference = 85DA1F5113984D7D0020154F /* Youpon-Pt-2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		85DA1F7313984D7D0020154F /* Youpon-Pt-2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85DA1F8B13984D7D0020154F /* Build configuration list for PBXNativeTarget "Youpon-Pt-2Tests" */;
+			buildPhases = (
+				85DA1F6F13984D7D0020154F /* Sources */,
+				85DA1F7013984D7D0020154F /* Frameworks */,
+				85DA1F7113984D7D0020154F /* Resources */,
+				85DA1F7213984D7D0020154F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85DA1F7A13984D7D0020154F /* PBXTargetDependency */,
+			);
+			name = "Youpon-Pt-2Tests";
+			productName = "Youpon-Pt-2Tests";
+			productReference = 85DA1F7413984D7D0020154F /* Youpon-Pt-2Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		85DA1F4813984D7D0020154F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Garrison Prinslow";
+			};
+			buildConfigurationList = 85DA1F4B13984D7D0020154F /* Build configuration list for PBXProject "Youpon-Pt-2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 85DA1F4613984D7D0020154F;
+			productRefGroup = 85DA1F5213984D7D0020154F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				85DA1F5013984D7D0020154F /* Youpon-Pt-2 */,
+				85DA1F7313984D7D0020154F /* Youpon-Pt-2Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		85DA1F4F13984D7D0020154F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85DA1F6213984D7D0020154F /* InfoPlist.strings in Resources */,
+				85DA1F6B13984D7D0020154F /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85DA1F7113984D7D0020154F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85DA1F8013984D7D0020154F /* InfoPlist.strings in Resources */,
+				85DA1F8313984D7D0020154F /* Youpon_Pt_2Tests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		85DA1F7213984D7D0020154F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		85DA1F4D13984D7D0020154F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85DA1F6513984D7D0020154F /* main.m in Sources */,
+				85DA1F6813984D7D0020154F /* Youpon_Pt_2AppDelegate.m in Sources */,
+				85DA1F6E13984D7D0020154F /* Youpon_Pt_2.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85DA1F6F13984D7D0020154F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85DA1F8513984D7D0020154F /* Youpon_Pt_2Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		85DA1F7A13984D7D0020154F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85DA1F5013984D7D0020154F /* Youpon-Pt-2 */;
+			targetProxy = 85DA1F7913984D7D0020154F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		85DA1F6013984D7D0020154F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85DA1F6113984D7D0020154F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		85DA1F6913984D7D0020154F /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85DA1F6A13984D7D0020154F /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		85DA1F7E13984D7D0020154F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85DA1F7F13984D7D0020154F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		85DA1F8613984D7D0020154F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		85DA1F8713984D7D0020154F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		85DA1F8913984D7D0020154F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Youpon-Pt-2/Youpon-Pt-2-Prefix.pch";
+				INFOPLIST_FILE = "Youpon-Pt-2/Youpon-Pt-2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		85DA1F8A13984D7D0020154F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Youpon-Pt-2/Youpon-Pt-2-Prefix.pch";
+				INFOPLIST_FILE = "Youpon-Pt-2/Youpon-Pt-2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		85DA1F8C13984D7D0020154F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Youpon-Pt-2.app/Youpon-Pt-2";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Youpon-Pt-2Tests/Youpon-Pt-2Tests-Prefix.pch";
+				INFOPLIST_FILE = "Youpon-Pt-2Tests/Youpon-Pt-2Tests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		85DA1F8D13984D7D0020154F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Youpon-Pt-2.app/Youpon-Pt-2";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Youpon-Pt-2Tests/Youpon-Pt-2Tests-Prefix.pch";
+				INFOPLIST_FILE = "Youpon-Pt-2Tests/Youpon-Pt-2Tests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		85DA1F4B13984D7D0020154F /* Build configuration list for PBXProject "Youpon-Pt-2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85DA1F8613984D7D0020154F /* Debug */,
+				85DA1F8713984D7D0020154F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85DA1F8813984D7D0020154F /* Build configuration list for PBXNativeTarget "Youpon-Pt-2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85DA1F8913984D7D0020154F /* Debug */,
+				85DA1F8A13984D7D0020154F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		85DA1F8B13984D7D0020154F /* Build configuration list for PBXNativeTarget "Youpon-Pt-2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85DA1F8C13984D7D0020154F /* Debug */,
+				85DA1F8D13984D7D0020154F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		85DA1F6C13984D7D0020154F /* Youpon_Pt_2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				85DA1F6D13984D7D0020154F /* Youpon_Pt_2.xcdatamodel */,
+			);
+			currentVersion = 85DA1F6D13984D7D0020154F /* Youpon_Pt_2.xcdatamodel */;
+			path = Youpon_Pt_2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 85DA1F4813984D7D0020154F /* Project object */;
+}
