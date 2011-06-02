@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85D03FA713984F30008D4D97 /* ServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D03FA413984F30008D4D97 /* ServiceRequest.m */; };
+		85D03FA813984F30008D4D97 /* ServiceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D03FA613984F30008D4D97 /* ServiceResponse.m */; };
 		85DA1F5613984D7D0020154F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DA1F5513984D7D0020154F /* UIKit.framework */; };
 		85DA1F5813984D7D0020154F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DA1F5713984D7D0020154F /* Foundation.framework */; };
 		85DA1F5A13984D7D0020154F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DA1F5913984D7D0020154F /* CoreGraphics.framework */; };
@@ -23,6 +25,23 @@
 		85DA1F8013984D7D0020154F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1F7E13984D7D0020154F /* InfoPlist.strings */; };
 		85DA1F8313984D7D0020154F /* Youpon_Pt_2Tests.h in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1F8213984D7D0020154F /* Youpon_Pt_2Tests.h */; };
 		85DA1F8513984D7D0020154F /* Youpon_Pt_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DA1F8413984D7D0020154F /* Youpon_Pt_2Tests.m */; };
+		85DA1FAA13984E7B0020154F /* 06-magnify.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1F9A13984E7B0020154F /* 06-magnify.png */; };
+		85DA1FAB13984E7B0020154F /* 07-map-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1F9B13984E7B0020154F /* 07-map-marker.png */; };
+		85DA1FAC13984E7B0020154F /* 15-tags.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1F9C13984E7B0020154F /* 15-tags.png */; };
+		85DA1FAD13984E7B0020154F /* 19-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1F9D13984E7B0020154F /* 19-gear.png */; };
+		85DA1FAE13984E7B0020154F /* 20-gear2.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1F9E13984E7B0020154F /* 20-gear2.png */; };
+		85DA1FAF13984E7B0020154F /* 28-star.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1F9F13984E7B0020154F /* 28-star.png */; };
+		85DA1FB013984E7B0020154F /* 71-compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1FA013984E7B0020154F /* 71-compass.png */; };
+		85DA1FB113984E7B0020154F /* 72-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1FA113984E7B0020154F /* 72-pin.png */; };
+		85DA1FB213984E7B0020154F /* 73-radar.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1FA213984E7B0020154F /* 73-radar.png */; };
+		85DA1FB313984E7B0020154F /* 74-location.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1FA313984E7B0020154F /* 74-location.png */; };
+		85DA1FB413984E7B0020154F /* 111-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1FA413984E7B0020154F /* 111-user.png */; };
+		85DA1FB513984E7B0020154F /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1FA513984E7B0020154F /* 112-group.png */; };
+		85DA1FB613984E7B0020154F /* 123-id-card.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1FA613984E7B0020154F /* 123-id-card.png */; };
+		85DA1FB713984E7B0020154F /* 145-persondot.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1FA713984E7B0020154F /* 145-persondot.png */; };
+		85DA1FB813984E7B0020154F /* 172-pricetag.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1FA813984E7B0020154F /* 172-pricetag.png */; };
+		85DA1FB913984E7B0020154F /* 191-collection.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1FA913984E7B0020154F /* 191-collection.png */; };
+		85DA1FBD13984E990020154F /* LoginServiceStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DA1FBC13984E990020154F /* LoginServiceStub.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,25 +55,47 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		85D03FA313984F30008D4D97 /* ServiceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceRequest.h; sourceTree = "<group>"; };
+		85D03FA413984F30008D4D97 /* ServiceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceRequest.m; sourceTree = "<group>"; };
+		85D03FA513984F30008D4D97 /* ServiceResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceResponse.h; sourceTree = "<group>"; };
+		85D03FA613984F30008D4D97 /* ServiceResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceResponse.m; sourceTree = "<group>"; };
 		85DA1F5113984D7D0020154F /* Youpon-Pt-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Youpon-Pt-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85DA1F5513984D7D0020154F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		85DA1F5713984D7D0020154F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		85DA1F5913984D7D0020154F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		85DA1F5B13984D7D0020154F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		85DA1F5F13984D7D0020154F /* Youpon-Pt-2-Info.plist */ = {isa = PBXFileReference; path = "Youpon-Pt-2-Info.plist"; sourceTree = "<group>"; };
+		85DA1F5F13984D7D0020154F /* Youpon-Pt-2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Youpon-Pt-2-Info.plist"; sourceTree = "<group>"; };
 		85DA1F6113984D7D0020154F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		85DA1F6313984D7D0020154F /* Youpon-Pt-2-Prefix.pch */ = {isa = PBXFileReference; path = "Youpon-Pt-2-Prefix.pch"; sourceTree = "<group>"; };
+		85DA1F6313984D7D0020154F /* Youpon-Pt-2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Youpon-Pt-2-Prefix.pch"; sourceTree = "<group>"; };
 		85DA1F6413984D7D0020154F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		85DA1F6613984D7D0020154F /* Youpon_Pt_2AppDelegate.h */ = {isa = PBXFileReference; path = Youpon_Pt_2AppDelegate.h; sourceTree = "<group>"; };
+		85DA1F6613984D7D0020154F /* Youpon_Pt_2AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Youpon_Pt_2AppDelegate.h; sourceTree = "<group>"; };
 		85DA1F6713984D7D0020154F /* Youpon_Pt_2AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Youpon_Pt_2AppDelegate.m; sourceTree = "<group>"; };
 		85DA1F6A13984D7D0020154F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		85DA1F6D13984D7D0020154F /* Youpon_Pt_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Youpon_Pt_2.xcdatamodel; sourceTree = "<group>"; };
 		85DA1F7413984D7D0020154F /* Youpon-Pt-2Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Youpon-Pt-2Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		85DA1F7D13984D7D0020154F /* Youpon-Pt-2Tests-Info.plist */ = {isa = PBXFileReference; path = "Youpon-Pt-2Tests-Info.plist"; sourceTree = "<group>"; };
+		85DA1F7D13984D7D0020154F /* Youpon-Pt-2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Youpon-Pt-2Tests-Info.plist"; sourceTree = "<group>"; };
 		85DA1F7F13984D7D0020154F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		85DA1F8113984D7D0020154F /* Youpon-Pt-2Tests-Prefix.pch */ = {isa = PBXFileReference; path = "Youpon-Pt-2Tests-Prefix.pch"; sourceTree = "<group>"; };
+		85DA1F8113984D7D0020154F /* Youpon-Pt-2Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Youpon-Pt-2Tests-Prefix.pch"; sourceTree = "<group>"; };
 		85DA1F8213984D7D0020154F /* Youpon_Pt_2Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Youpon_Pt_2Tests.h; sourceTree = "<group>"; };
 		85DA1F8413984D7D0020154F /* Youpon_Pt_2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Youpon_Pt_2Tests.m; sourceTree = "<group>"; };
+		85DA1F9A13984E7B0020154F /* 06-magnify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-magnify.png"; sourceTree = "<group>"; };
+		85DA1F9B13984E7B0020154F /* 07-map-marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "07-map-marker.png"; sourceTree = "<group>"; };
+		85DA1F9C13984E7B0020154F /* 15-tags.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "15-tags.png"; sourceTree = "<group>"; };
+		85DA1F9D13984E7B0020154F /* 19-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear.png"; sourceTree = "<group>"; };
+		85DA1F9E13984E7B0020154F /* 20-gear2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20-gear2.png"; sourceTree = "<group>"; };
+		85DA1F9F13984E7B0020154F /* 28-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "28-star.png"; sourceTree = "<group>"; };
+		85DA1FA013984E7B0020154F /* 71-compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "71-compass.png"; sourceTree = "<group>"; };
+		85DA1FA113984E7B0020154F /* 72-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "72-pin.png"; sourceTree = "<group>"; };
+		85DA1FA213984E7B0020154F /* 73-radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "73-radar.png"; sourceTree = "<group>"; };
+		85DA1FA313984E7B0020154F /* 74-location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "74-location.png"; sourceTree = "<group>"; };
+		85DA1FA413984E7B0020154F /* 111-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "111-user.png"; sourceTree = "<group>"; };
+		85DA1FA513984E7B0020154F /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
+		85DA1FA613984E7B0020154F /* 123-id-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "123-id-card.png"; sourceTree = "<group>"; };
+		85DA1FA713984E7B0020154F /* 145-persondot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "145-persondot.png"; sourceTree = "<group>"; };
+		85DA1FA813984E7B0020154F /* 172-pricetag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "172-pricetag.png"; sourceTree = "<group>"; };
+		85DA1FA913984E7B0020154F /* 191-collection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "191-collection.png"; sourceTree = "<group>"; };
+		85DA1FBB13984E990020154F /* LoginServiceStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginServiceStub.h; sourceTree = "<group>"; };
+		85DA1FBC13984E990020154F /* LoginServiceStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginServiceStub.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,10 +157,13 @@
 		85DA1F5D13984D7D0020154F /* Youpon-Pt-2 */ = {
 			isa = PBXGroup;
 			children = (
+				85DA1FBE13984E9F0020154F /* Classes */,
+				85DA1FBA13984E870020154F /* ServiceStubs */,
+				85DA1F9813984E5E0020154F /* Images */,
 				85DA1F6613984D7D0020154F /* Youpon_Pt_2AppDelegate.h */,
 				85DA1F6713984D7D0020154F /* Youpon_Pt_2AppDelegate.m */,
-				85DA1F6913984D7D0020154F /* MainWindow.xib */,
-				85DA1F6C13984D7D0020154F /* Youpon_Pt_2.xcdatamodeld */,
+				85DA1F8E13984DEA0020154F /* Interface */,
+				85DA1F8F13984DF80020154F /* CoreData */,
 				85DA1F5E13984D7D0020154F /* Supporting Files */,
 			);
 			path = "Youpon-Pt-2";
@@ -154,6 +198,73 @@
 				85DA1F8113984D7D0020154F /* Youpon-Pt-2Tests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		85DA1F8E13984DEA0020154F /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				85DA1F6913984D7D0020154F /* MainWindow.xib */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		85DA1F8F13984DF80020154F /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				85DA1F6C13984D7D0020154F /* Youpon_Pt_2.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		85DA1F9813984E5E0020154F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				85DA1F9913984E650020154F /* TabBarIcons */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		85DA1F9913984E650020154F /* TabBarIcons */ = {
+			isa = PBXGroup;
+			children = (
+				85DA1F9A13984E7B0020154F /* 06-magnify.png */,
+				85DA1F9B13984E7B0020154F /* 07-map-marker.png */,
+				85DA1F9C13984E7B0020154F /* 15-tags.png */,
+				85DA1F9D13984E7B0020154F /* 19-gear.png */,
+				85DA1F9E13984E7B0020154F /* 20-gear2.png */,
+				85DA1F9F13984E7B0020154F /* 28-star.png */,
+				85DA1FA013984E7B0020154F /* 71-compass.png */,
+				85DA1FA113984E7B0020154F /* 72-pin.png */,
+				85DA1FA213984E7B0020154F /* 73-radar.png */,
+				85DA1FA313984E7B0020154F /* 74-location.png */,
+				85DA1FA413984E7B0020154F /* 111-user.png */,
+				85DA1FA513984E7B0020154F /* 112-group.png */,
+				85DA1FA613984E7B0020154F /* 123-id-card.png */,
+				85DA1FA713984E7B0020154F /* 145-persondot.png */,
+				85DA1FA813984E7B0020154F /* 172-pricetag.png */,
+				85DA1FA913984E7B0020154F /* 191-collection.png */,
+			);
+			name = TabBarIcons;
+			sourceTree = "<group>";
+		};
+		85DA1FBA13984E870020154F /* ServiceStubs */ = {
+			isa = PBXGroup;
+			children = (
+				85DA1FBB13984E990020154F /* LoginServiceStub.h */,
+				85DA1FBC13984E990020154F /* LoginServiceStub.m */,
+			);
+			name = ServiceStubs;
+			sourceTree = "<group>";
+		};
+		85DA1FBE13984E9F0020154F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				85D03FA313984F30008D4D97 /* ServiceRequest.h */,
+				85D03FA413984F30008D4D97 /* ServiceRequest.m */,
+				85D03FA513984F30008D4D97 /* ServiceResponse.h */,
+				85D03FA613984F30008D4D97 /* ServiceResponse.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +339,22 @@
 			files = (
 				85DA1F6213984D7D0020154F /* InfoPlist.strings in Resources */,
 				85DA1F6B13984D7D0020154F /* MainWindow.xib in Resources */,
+				85DA1FAA13984E7B0020154F /* 06-magnify.png in Resources */,
+				85DA1FAB13984E7B0020154F /* 07-map-marker.png in Resources */,
+				85DA1FAC13984E7B0020154F /* 15-tags.png in Resources */,
+				85DA1FAD13984E7B0020154F /* 19-gear.png in Resources */,
+				85DA1FAE13984E7B0020154F /* 20-gear2.png in Resources */,
+				85DA1FAF13984E7B0020154F /* 28-star.png in Resources */,
+				85DA1FB013984E7B0020154F /* 71-compass.png in Resources */,
+				85DA1FB113984E7B0020154F /* 72-pin.png in Resources */,
+				85DA1FB213984E7B0020154F /* 73-radar.png in Resources */,
+				85DA1FB313984E7B0020154F /* 74-location.png in Resources */,
+				85DA1FB413984E7B0020154F /* 111-user.png in Resources */,
+				85DA1FB513984E7B0020154F /* 112-group.png in Resources */,
+				85DA1FB613984E7B0020154F /* 123-id-card.png in Resources */,
+				85DA1FB713984E7B0020154F /* 145-persondot.png in Resources */,
+				85DA1FB813984E7B0020154F /* 172-pricetag.png in Resources */,
+				85DA1FB913984E7B0020154F /* 191-collection.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +393,9 @@
 				85DA1F6513984D7D0020154F /* main.m in Sources */,
 				85DA1F6813984D7D0020154F /* Youpon_Pt_2AppDelegate.m in Sources */,
 				85DA1F6E13984D7D0020154F /* Youpon_Pt_2.xcdatamodeld in Sources */,
+				85DA1FBD13984E990020154F /* LoginServiceStub.m in Sources */,
+				85D03FA713984F30008D4D97 /* ServiceRequest.m in Sources */,
+				85D03FA813984F30008D4D97 /* ServiceResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +568,7 @@
 				85DA1F8A13984D7D0020154F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		85DA1F8B13984D7D0020154F /* Build configuration list for PBXNativeTarget "Youpon-Pt-2Tests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +577,7 @@
 				85DA1F8D13984D7D0020154F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
