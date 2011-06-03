@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		85D03FA713984F30008D4D97 /* ServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D03FA413984F30008D4D97 /* ServiceRequest.m */; };
 		85D03FA813984F30008D4D97 /* ServiceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D03FA613984F30008D4D97 /* ServiceResponse.m */; };
+		85D03FB513987E44008D4D97 /* OffersRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D03FB413987E44008D4D97 /* OffersRootViewController.m */; };
+		85D03FB813987E71008D4D97 /* MapRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D03FB713987E71008D4D97 /* MapRootViewController.m */; };
+		85D03FBB13987E85008D4D97 /* ProfileRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D03FBA13987E85008D4D97 /* ProfileRootViewController.m */; };
+		85D03FBE13987F34008D4D97 /* SettingsRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D03FBD13987F34008D4D97 /* SettingsRootViewController.m */; };
 		85DA1F5613984D7D0020154F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DA1F5513984D7D0020154F /* UIKit.framework */; };
 		85DA1F5813984D7D0020154F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DA1F5713984D7D0020154F /* Foundation.framework */; };
 		85DA1F5A13984D7D0020154F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DA1F5913984D7D0020154F /* CoreGraphics.framework */; };
@@ -59,6 +63,14 @@
 		85D03FA413984F30008D4D97 /* ServiceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceRequest.m; sourceTree = "<group>"; };
 		85D03FA513984F30008D4D97 /* ServiceResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceResponse.h; sourceTree = "<group>"; };
 		85D03FA613984F30008D4D97 /* ServiceResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceResponse.m; sourceTree = "<group>"; };
+		85D03FB313987E44008D4D97 /* OffersRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffersRootViewController.h; sourceTree = "<group>"; };
+		85D03FB413987E44008D4D97 /* OffersRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OffersRootViewController.m; sourceTree = "<group>"; };
+		85D03FB613987E71008D4D97 /* MapRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapRootViewController.h; sourceTree = "<group>"; };
+		85D03FB713987E71008D4D97 /* MapRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapRootViewController.m; sourceTree = "<group>"; };
+		85D03FB913987E85008D4D97 /* ProfileRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileRootViewController.h; sourceTree = "<group>"; };
+		85D03FBA13987E85008D4D97 /* ProfileRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileRootViewController.m; sourceTree = "<group>"; };
+		85D03FBC13987F34008D4D97 /* SettingsRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsRootViewController.h; sourceTree = "<group>"; };
+		85D03FBD13987F34008D4D97 /* SettingsRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsRootViewController.m; sourceTree = "<group>"; };
 		85DA1F5113984D7D0020154F /* Youpon-Pt-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Youpon-Pt-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85DA1F5513984D7D0020154F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		85DA1F5713984D7D0020154F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -124,6 +136,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85D03FB213987DD5008D4D97 /* UIControllers */ = {
+			isa = PBXGroup;
+			children = (
+				85D03FB313987E44008D4D97 /* OffersRootViewController.h */,
+				85D03FB413987E44008D4D97 /* OffersRootViewController.m */,
+				85D03FB613987E71008D4D97 /* MapRootViewController.h */,
+				85D03FB713987E71008D4D97 /* MapRootViewController.m */,
+				85D03FB913987E85008D4D97 /* ProfileRootViewController.h */,
+				85D03FBA13987E85008D4D97 /* ProfileRootViewController.m */,
+				85D03FBC13987F34008D4D97 /* SettingsRootViewController.h */,
+				85D03FBD13987F34008D4D97 /* SettingsRootViewController.m */,
+			);
+			name = UIControllers;
+			sourceTree = "<group>";
+		};
 		85DA1F4613984D7D0020154F = {
 			isa = PBXGroup;
 			children = (
@@ -158,13 +185,14 @@
 			isa = PBXGroup;
 			children = (
 				85DA1FBE13984E9F0020154F /* Classes */,
-				85DA1FBA13984E870020154F /* ServiceStubs */,
+				85DA1F8F13984DF80020154F /* CoreData */,
+				85DA1F8E13984DEA0020154F /* Interface */,
+				85D03FB213987DD5008D4D97 /* UIControllers */,
 				85DA1F9813984E5E0020154F /* Images */,
+				85DA1FBA13984E870020154F /* ServiceStubs */,
+				85DA1F5E13984D7D0020154F /* Supporting Files */,
 				85DA1F6613984D7D0020154F /* Youpon_Pt_2AppDelegate.h */,
 				85DA1F6713984D7D0020154F /* Youpon_Pt_2AppDelegate.m */,
-				85DA1F8E13984DEA0020154F /* Interface */,
-				85DA1F8F13984DF80020154F /* CoreData */,
-				85DA1F5E13984D7D0020154F /* Supporting Files */,
 			);
 			path = "Youpon-Pt-2";
 			sourceTree = "<group>";
@@ -396,6 +424,10 @@
 				85DA1FBD13984E990020154F /* LoginServiceStub.m in Sources */,
 				85D03FA713984F30008D4D97 /* ServiceRequest.m in Sources */,
 				85D03FA813984F30008D4D97 /* ServiceResponse.m in Sources */,
+				85D03FB513987E44008D4D97 /* OffersRootViewController.m in Sources */,
+				85D03FB813987E71008D4D97 /* MapRootViewController.m in Sources */,
+				85D03FBB13987E85008D4D97 /* ProfileRootViewController.m in Sources */,
+				85D03FBE13987F34008D4D97 /* SettingsRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
