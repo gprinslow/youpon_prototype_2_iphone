@@ -13,6 +13,8 @@
 
 @synthesize window=_window;
 
+@synthesize rootTabBarController=_rootTabBarController;
+
 @synthesize managedObjectContext=__managedObjectContext;
 
 @synthesize managedObjectModel=__managedObjectModel;
@@ -22,6 +24,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+//    self.rootTabBarController = [[[UITabBarController alloc] init] autorelease];
+//    OffersRootViewController *offersRootViewController = [[[OffersRootViewController alloc] init] autorelease];
+//    MapRootViewController *mapRootViewController = [[[MapRootViewController alloc] init] autorelease];
+//    ProfileRootViewController *profileRootViewController = [[[ProfileRootViewController alloc] init] autorelease];
+//    SettingsRootViewController *settingsRootViewController = [[[SettingsRootViewController alloc] init] autorelease];
+//    UINavigationController *offersRootNavController = [[[UINavigationController alloc] initWithRootViewController:offersRootViewController] autorelease];
+//    
+//    NSArray *tabBarControllers = [NSArray arrayWithObjects:offersRootNavController, mapRootViewController, profileRootViewController, settingsRootViewController, nil];
+//    rootTabBarController.viewControllers = tabBarControllers;
+    
+    self.window.rootViewController = self.rootTabBarController;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
