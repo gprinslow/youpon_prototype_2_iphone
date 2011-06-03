@@ -17,6 +17,8 @@
 		85D91F13139953D600265126 /* ProfileRootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D91F12139953D600265126 /* ProfileRootView.xib */; };
 		85D91F15139955D900265126 /* SettingsRootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D91F14139955D900265126 /* SettingsRootView.xib */; };
 		85D91F1713995DF900265126 /* OffersRootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D91F1613995DF900265126 /* OffersRootView.xib */; };
+		85D91F22139977F100265126 /* LoginRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D91F21139977F100265126 /* LoginRootViewController.m */; };
+		85D91F24139978E600265126 /* LoginRootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D91F23139978E600265126 /* LoginRootView.xib */; };
 		85DA1F5613984D7D0020154F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DA1F5513984D7D0020154F /* UIKit.framework */; };
 		85DA1F5813984D7D0020154F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DA1F5713984D7D0020154F /* Foundation.framework */; };
 		85DA1F5A13984D7D0020154F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DA1F5913984D7D0020154F /* CoreGraphics.framework */; };
@@ -79,6 +81,9 @@
 		85D91F12139953D600265126 /* ProfileRootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileRootView.xib; sourceTree = "<group>"; };
 		85D91F14139955D900265126 /* SettingsRootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsRootView.xib; sourceTree = "<group>"; };
 		85D91F1613995DF900265126 /* OffersRootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OffersRootView.xib; sourceTree = "<group>"; };
+		85D91F20139977F100265126 /* LoginRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRootViewController.h; sourceTree = "<group>"; };
+		85D91F21139977F100265126 /* LoginRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRootViewController.m; sourceTree = "<group>"; };
+		85D91F23139978E600265126 /* LoginRootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginRootView.xib; sourceTree = "<group>"; };
 		85DA1F5113984D7D0020154F /* Youpon-Pt-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Youpon-Pt-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85DA1F5513984D7D0020154F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		85DA1F5713984D7D0020154F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -155,6 +160,8 @@
 				85D03FBA13987E85008D4D97 /* ProfileRootViewController.m */,
 				85D03FBC13987F34008D4D97 /* SettingsRootViewController.h */,
 				85D03FBD13987F34008D4D97 /* SettingsRootViewController.m */,
+				85D91F20139977F100265126 /* LoginRootViewController.h */,
+				85D91F21139977F100265126 /* LoginRootViewController.m */,
 			);
 			name = UIControllers;
 			sourceTree = "<group>";
@@ -192,6 +199,8 @@
 		85DA1F5D13984D7D0020154F /* Youpon-Pt-2 */ = {
 			isa = PBXGroup;
 			children = (
+				85DA1F6613984D7D0020154F /* Youpon_Pt_2AppDelegate.h */,
+				85DA1F6713984D7D0020154F /* Youpon_Pt_2AppDelegate.m */,
 				85DA1FBE13984E9F0020154F /* Classes */,
 				85DA1F8F13984DF80020154F /* CoreData */,
 				85DA1F8E13984DEA0020154F /* Interface */,
@@ -199,8 +208,6 @@
 				85DA1F9813984E5E0020154F /* Images */,
 				85DA1FBA13984E870020154F /* ServiceStubs */,
 				85DA1F5E13984D7D0020154F /* Supporting Files */,
-				85DA1F6613984D7D0020154F /* Youpon_Pt_2AppDelegate.h */,
-				85DA1F6713984D7D0020154F /* Youpon_Pt_2AppDelegate.m */,
 			);
 			path = "Youpon-Pt-2";
 			sourceTree = "<group>";
@@ -244,6 +251,7 @@
 				85D91F0F139953C700265126 /* MapRootView.xib */,
 				85D91F12139953D600265126 /* ProfileRootView.xib */,
 				85D91F14139955D900265126 /* SettingsRootView.xib */,
+				85D91F23139978E600265126 /* LoginRootView.xib */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -399,6 +407,7 @@
 				85D91F13139953D600265126 /* ProfileRootView.xib in Resources */,
 				85D91F15139955D900265126 /* SettingsRootView.xib in Resources */,
 				85D91F1713995DF900265126 /* OffersRootView.xib in Resources */,
+				85D91F24139978E600265126 /* LoginRootView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +453,7 @@
 				85D03FB813987E71008D4D97 /* MapRootViewController.m in Sources */,
 				85D03FBB13987E85008D4D97 /* ProfileRootViewController.m in Sources */,
 				85D03FBE13987F34008D4D97 /* SettingsRootViewController.m in Sources */,
+				85D91F22139977F100265126 /* LoginRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

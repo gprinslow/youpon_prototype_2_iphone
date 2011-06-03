@@ -21,9 +21,14 @@
 
 @synthesize persistentStoreCoordinator=__persistentStoreCoordinator;
 
+
+
+#pragma mark - Application Lifecycle
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    //Programmatic Tab Bar init - not being used currently
 //    self.rootTabBarController = [[[UITabBarController alloc] init] autorelease];
 //    OffersRootViewController *offersRootViewController = [[[OffersRootViewController alloc] init] autorelease];
 //    MapRootViewController *mapRootViewController = [[[MapRootViewController alloc] init] autorelease];
@@ -34,7 +39,14 @@
 //    NSArray *tabBarControllers = [NSArray arrayWithObjects:offersRootNavController, mapRootViewController, profileRootViewController, settingsRootViewController, nil];
 //    rootTabBarController.viewControllers = tabBarControllers;
     
+    //Init the LoginView
+    loginRootViewController = [[LoginRootViewController alloc] initWithNibName:@"LoginRootView" bundle:nil];
+    
+    //Set tab bar controller as window's root view controller
     self.window.rootViewController = self.rootTabBarController;
+    
+    //Present the LoginView - modally
+    [self.rootTabBarController presentModalViewController:loginRootViewController animated:YES];
     
     [self.window makeKeyAndVisible];
     return YES;
@@ -80,6 +92,7 @@
 {
     [_window release];
     [_rootTabBarController release];
+    [loginRootViewController release];
     [__managedObjectContext release];
     [__managedObjectModel release];
     [__persistentStoreCoordinator release];
@@ -93,6 +106,8 @@
      self.<#View controller#>.managedObjectContext = self.managedObjectContext;
     */
 }
+
+#pragma mark - Core Data - saveContext
 
 - (void)saveContext
 {
@@ -206,5 +221,14 @@
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
+
+#pragma mark - Service Calls
+
+- (ServiceResponse *)callLoginService:(ServiceRequest *)loginRequest {
+    LoginServiceStub *loginService = [[[LoginServiceStub alloc] init] autorelease];
+    
+    return [loginService callLoginServiceStub:loginRequest];
+}
+
 
 @end

@@ -11,10 +11,16 @@
 #import "MapRootViewController.h"
 #import "ProfileRootViewController.h"
 #import "SettingsRootViewController.h"
+#import "LoginRootViewController.h"
+#import "ServiceRequest.h"
+#import "ServiceResponse.h"
+#import "LoginServiceStub.h"
+
 
 
 @interface Youpon_Pt_2AppDelegate : NSObject <UIApplicationDelegate> {
     UITabBarController *rootTabBarController;
+    LoginRootViewController *loginRootViewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -23,7 +29,11 @@
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
+//Provided methods - Core Data
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+
+//Custom methods - Service Calls
+- (ServiceResponse *)callLoginService:(ServiceRequest *)loginRequest;
 
 @end
