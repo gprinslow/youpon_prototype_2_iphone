@@ -79,6 +79,7 @@
 - (void)dealloc
 {
     [_window release];
+    [_rootTabBarController release];
     [__managedObjectContext release];
     [__managedObjectModel release];
     [__persistentStoreCoordinator release];

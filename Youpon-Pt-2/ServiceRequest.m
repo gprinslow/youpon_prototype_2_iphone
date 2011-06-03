@@ -18,4 +18,13 @@
 
 
 
+- (void)dealloc
+{
+    [requestTime release];
+    [requestType release];
+    [requestorUsername release];
+    [requestorPassword release];
+    [super dealloc];
+}
+
 @end

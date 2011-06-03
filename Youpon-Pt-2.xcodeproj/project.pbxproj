@@ -13,6 +13,10 @@
 		85D03FB813987E71008D4D97 /* MapRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D03FB713987E71008D4D97 /* MapRootViewController.m */; };
 		85D03FBB13987E85008D4D97 /* ProfileRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D03FBA13987E85008D4D97 /* ProfileRootViewController.m */; };
 		85D03FBE13987F34008D4D97 /* SettingsRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D03FBD13987F34008D4D97 /* SettingsRootViewController.m */; };
+		85D91F10139953C700265126 /* MapRootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D91F0F139953C700265126 /* MapRootView.xib */; };
+		85D91F13139953D600265126 /* ProfileRootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D91F12139953D600265126 /* ProfileRootView.xib */; };
+		85D91F15139955D900265126 /* SettingsRootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D91F14139955D900265126 /* SettingsRootView.xib */; };
+		85D91F1713995DF900265126 /* OffersRootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D91F1613995DF900265126 /* OffersRootView.xib */; };
 		85DA1F5613984D7D0020154F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DA1F5513984D7D0020154F /* UIKit.framework */; };
 		85DA1F5813984D7D0020154F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DA1F5713984D7D0020154F /* Foundation.framework */; };
 		85DA1F5A13984D7D0020154F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DA1F5913984D7D0020154F /* CoreGraphics.framework */; };
@@ -71,6 +75,10 @@
 		85D03FBA13987E85008D4D97 /* ProfileRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileRootViewController.m; sourceTree = "<group>"; };
 		85D03FBC13987F34008D4D97 /* SettingsRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsRootViewController.h; sourceTree = "<group>"; };
 		85D03FBD13987F34008D4D97 /* SettingsRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsRootViewController.m; sourceTree = "<group>"; };
+		85D91F0F139953C700265126 /* MapRootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapRootView.xib; sourceTree = "<group>"; };
+		85D91F12139953D600265126 /* ProfileRootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileRootView.xib; sourceTree = "<group>"; };
+		85D91F14139955D900265126 /* SettingsRootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsRootView.xib; sourceTree = "<group>"; };
+		85D91F1613995DF900265126 /* OffersRootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OffersRootView.xib; sourceTree = "<group>"; };
 		85DA1F5113984D7D0020154F /* Youpon-Pt-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Youpon-Pt-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85DA1F5513984D7D0020154F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		85DA1F5713984D7D0020154F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -232,6 +240,10 @@
 			isa = PBXGroup;
 			children = (
 				85DA1F6913984D7D0020154F /* MainWindow.xib */,
+				85D91F1613995DF900265126 /* OffersRootView.xib */,
+				85D91F0F139953C700265126 /* MapRootView.xib */,
+				85D91F12139953D600265126 /* ProfileRootView.xib */,
+				85D91F14139955D900265126 /* SettingsRootView.xib */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -383,6 +395,10 @@
 				85DA1FB713984E7B0020154F /* 145-persondot.png in Resources */,
 				85DA1FB813984E7B0020154F /* 172-pricetag.png in Resources */,
 				85DA1FB913984E7B0020154F /* 191-collection.png in Resources */,
+				85D91F10139953C700265126 /* MapRootView.xib in Resources */,
+				85D91F13139953D600265126 /* ProfileRootView.xib in Resources */,
+				85D91F15139955D900265126 /* SettingsRootView.xib in Resources */,
+				85D91F1713995DF900265126 /* OffersRootView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

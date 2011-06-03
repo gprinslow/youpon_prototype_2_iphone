@@ -18,4 +18,14 @@
 @synthesize request;
 
 
+- (void)dealloc
+{
+    [responseTime release];
+    [responseType release];
+    [responseCode release];
+    [responseDetail release];
+    [request release];
+    [super dealloc];
+}
+
 @end
