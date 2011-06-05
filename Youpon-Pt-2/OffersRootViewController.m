@@ -10,6 +10,7 @@
 
 
 @implementation OffersRootViewController
+@synthesize offersRootTableViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,6 +48,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
+    //TODO: Check to see if this is the correct way to link the Table View
     [self setView:[offersRootTableViewController view]];
     [super viewDidLoad];
 }
@@ -54,8 +56,7 @@
 
 - (void)viewDidUnload
 {
-    [offersRootTableViewController release];
-    offersRootTableViewController = nil;
+    [self setOffersRootTableViewController:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

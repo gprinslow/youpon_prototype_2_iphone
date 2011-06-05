@@ -10,6 +10,7 @@
 
 
 @implementation OffersRootTableViewController
+@synthesize offersRootTableView;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -22,6 +23,7 @@
 
 - (void)dealloc
 {
+    [offersRootTableView release];
     [super dealloc];
 }
 
