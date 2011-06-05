@@ -18,7 +18,7 @@
 
 
 
-@interface Youpon_Pt_2AppDelegate : NSObject <UIApplicationDelegate> {
+@interface Youpon_Pt_2AppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
     UITabBarController *rootTabBarController;
     LoginRootViewController *loginRootViewController;
 }

@@ -230,5 +230,21 @@
     return [loginService callLoginServiceStub:loginRequest];
 }
 
+#pragma mark - Tab Bar Controller Delegate methods
+
+
+ // Optional UITabBarControllerDelegate method.
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    //TODO: fill in didSelectViewControlelr
+}
+ 
+
+
+ // Optional UITabBarControllerDelegate method.
+- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed {
+    //TODO: fill in didEndCustomizingViewControllers (if needed)
+}
+ 
 
 @end
