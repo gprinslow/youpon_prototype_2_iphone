@@ -11,6 +11,7 @@
 
 @interface OffersRootViewController : UIViewController {
     
+    IBOutlet OffersRootTableViewController *offersRootTableViewController;
 }
 
 @end

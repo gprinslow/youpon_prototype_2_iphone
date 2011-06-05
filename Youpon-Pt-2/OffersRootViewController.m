@@ -22,6 +22,7 @@
 
 - (void)dealloc
 {
+    [offersRootTableViewController release];
     [super dealloc];
 }
 
@@ -52,6 +53,8 @@
 
 - (void)viewDidUnload
 {
+    [offersRootTableViewController release];
+    offersRootTableViewController = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

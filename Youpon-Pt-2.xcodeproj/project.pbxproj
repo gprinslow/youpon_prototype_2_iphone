@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		852FF094139C1B14007C5475 /* OffersRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 852FF093139C1B14007C5475 /* OffersRootTableViewController.m */; };
 		85D03FA713984F30008D4D97 /* ServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D03FA413984F30008D4D97 /* ServiceRequest.m */; };
 		85D03FA813984F30008D4D97 /* ServiceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D03FA613984F30008D4D97 /* ServiceResponse.m */; };
 		85D03FB513987E44008D4D97 /* OffersRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D03FB413987E44008D4D97 /* OffersRootViewController.m */; };
@@ -65,6 +66,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		852FF092139C1B14007C5475 /* OffersRootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffersRootTableViewController.h; sourceTree = "<group>"; };
+		852FF093139C1B14007C5475 /* OffersRootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OffersRootTableViewController.m; sourceTree = "<group>"; };
 		85D03FA313984F30008D4D97 /* ServiceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceRequest.h; sourceTree = "<group>"; };
 		85D03FA413984F30008D4D97 /* ServiceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceRequest.m; sourceTree = "<group>"; };
 		85D03FA513984F30008D4D97 /* ServiceResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceResponse.h; sourceTree = "<group>"; };
@@ -162,6 +165,8 @@
 				85D03FBD13987F34008D4D97 /* SettingsRootViewController.m */,
 				85D91F20139977F100265126 /* LoginRootViewController.h */,
 				85D91F21139977F100265126 /* LoginRootViewController.m */,
+				852FF092139C1B14007C5475 /* OffersRootTableViewController.h */,
+				852FF093139C1B14007C5475 /* OffersRootTableViewController.m */,
 			);
 			name = UIControllers;
 			sourceTree = "<group>";
@@ -454,6 +459,7 @@
 				85D03FBB13987E85008D4D97 /* ProfileRootViewController.m in Sources */,
 				85D03FBE13987F34008D4D97 /* SettingsRootViewController.m in Sources */,
 				85D91F22139977F100265126 /* LoginRootViewController.m in Sources */,
+				852FF094139C1B14007C5475 /* OffersRootTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
