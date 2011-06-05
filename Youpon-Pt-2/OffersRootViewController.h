@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "OffersRootTableViewController.h"
 
 @interface OffersRootViewController : UIViewController {
     
