@@ -56,7 +56,8 @@
                               initWithTitle:NSLocalizedString(@"Error loading data", @"Error loading data") 
                               message:[NSString stringWithFormat:NSLocalizedString(@"Error was: %@, quitting.", @"Error was: %@, quitting."), [error localizedDescription]] 
                               delegate:self 
-                              cancelButtonTitle:NSLocalizedString(@"OK, nevermind", @"OK, nevermind")otherButtonTitles:nil];
+                              cancelButtonTitle:NSLocalizedString(@"OK, nevermind", @"OK, nevermind")
+                              otherButtonTitles:nil];
         [alert show];
     }
     
@@ -166,11 +167,28 @@
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        //[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+        
+        NSError *error;
+        
+        if (![context save:&error]) {
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            UIAlertView *alert = [[UIAlertView alloc] 
+                                  initWithTitle:NSLocalizedString(@"Error saving after delete", @"Error saving after delete") 
+                                  message:[NSString stringWithFormat:NSLocalizedString(@"Error was: %@, quitting.", @"Error was: %@, quitting."), [error localizedDescription]] 
+                                  delegate:self 
+                                  cancelButtonTitle:NSLocalizedString(@"OK, nevermind", @"OK, nevermind") 
+                                  otherButtonTitles:nil];
+            [alert show];
+        }
+        
     }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+    //else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    //}   
 }
 
 
@@ -229,5 +247,11 @@
     //Flip the editing status on the table
     [self.offersRootTableView setEditing:!editing animated:YES];
 }
+
+#pragma mark -
+#pragma mark Fetched results controller
+/*
+ * Note: the Fetched results controller handles 
+ */
 
 @end
