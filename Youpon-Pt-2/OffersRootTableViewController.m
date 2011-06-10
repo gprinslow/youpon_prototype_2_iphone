@@ -53,7 +53,7 @@
     NSError *error = nil;
     if (![[self fetchedResultsController] performFetch:&error]) {
         UIAlertView *alert = [[UIAlertView alloc] 
-                              initWithTitle:NSLocalizedString("Error loading data", "Error loading data") 
+                              initWithTitle:NSLocalizedString(@"Error loading data", @"Error loading data") 
                               message:[NSString stringWithFormat:NSLocalizedString(@"Error was: %@, quitting.", @"Error was: %@, quitting."), [error localizedDescription]] 
                               delegate:self 
                               cancelButtonTitle:NSLocalizedString(@"OK, nevermind", @"OK, nevermind")otherButtonTitles:nil];
