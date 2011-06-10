@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface OffersRootTableViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
+@interface OffersRootTableViewController : UITableViewController <NSFetchedResultsControllerDelegate, UIAlertViewDelegate> {
     
     UITableView *offersRootTableView;
     

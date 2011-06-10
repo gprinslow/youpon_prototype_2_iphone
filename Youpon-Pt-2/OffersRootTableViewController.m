@@ -6,7 +6,14 @@
 //  Copyright 2011 Garrison Prinslow. All rights reserved.
 //
 
+/*
+ * REFACTOR: Ch.3 does not use tableViewController - so there is a cleaner way to implement add/edit than below
+ *
+ */
+
+
 #import "OffersRootTableViewController.h"
+#import "Youpon_Pt_2AppDelegate.h"
 
 
 @implementation OffersRootTableViewController
@@ -59,16 +66,8 @@
                               cancelButtonTitle:NSLocalizedString(@"OK, nevermind", @"OK, nevermind")
                               otherButtonTitles:nil];
         [alert show];
+        [alert release];
     }
-    
-    //Moved this from viewWillAppear in Ch.3
-    //Link edit button to toggleEdit
-    UIBarButtonItem *editButton = self.editButtonItem;
-    [editButton setTarget:self];
-    [editButton setAction:@selector(toggleEdit)];
-    self.navigationItem.leftBarButtonItem = editButton;
-    
-    //Add button
     
 }
 
@@ -83,6 +82,22 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    //Ch.3 Edits
+    //REFACTOR: this would be unnecessary if used default TableViewController buttons...
+    //Link edit button to toggleEdit
+    UIBarButtonItem *editButton = self.editButtonItem;
+    [editButton setTarget:self];
+    [editButton setAction:@selector(toggleEdit)];
+    self.navigationItem.leftBarButtonItem = editButton;
+    
+    //Add button
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] 
+                                  initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
+                                  target:self 
+                                  action:@selector(addOffer)];
+    self.navigationItem.rightBarButtonItem = addButton;
+    [addButton release];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -183,6 +198,7 @@
                                   cancelButtonTitle:NSLocalizedString(@"OK, nevermind", @"OK, nevermind") 
                                   otherButtonTitles:nil];
             [alert show];
+            [alert release];
         }
         
     }   
@@ -220,10 +236,12 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
+    
+    //Ch.3 edits
     //TODO: Instantiate detail editing controller and push onto stack
 }
 
-#pragma mark - Custom methods added - Ch.3
+#pragma mark - Custom methods added - Ch.3 - REFACTOR this b/c unnecessary with TableViewController
 
 - (void)addOffer {
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
@@ -239,19 +257,167 @@
 }
 
 - (IBAction)toggleEdit {
+
+    //Editing YES means the table view is currently in editing mode, but is being switched to NOT editing (Note this is reversed from Ch.3 b/c theirs was confusing)
     //??? Should refer to instance variable offersRootTableView or self.tableView here?
-    //Editing YES means the table view is currently in editing mode (Note this is reversed from Ch.3 b/c theirs was confusing)
-    BOOL editing = self.offersRootTableView.editing;
+    BOOL editing = self.tableView.editing;
     self.navigationItem.rightBarButtonItem.enabled = editing;
     self.navigationItem.leftBarButtonItem.title = (editing) ? NSLocalizedString(@"Edit", @"Edit") : NSLocalizedString(@"Done", "Done");
     //Flip the editing status on the table
-    [self.offersRootTableView setEditing:!editing animated:YES];
+    //??? Should refer to instance variable offersRootTableView or self.tableView here?
+    [self.tableView setEditing:!editing animated:YES];
 }
 
 #pragma mark -
 #pragma mark Fetched results controller
 /*
- * Note: the Fetched results controller handles 
+ * Note: the Fetched results controller handles setting up, inserting, deleting, and animations thereof
+ * 2nd Note: Ch.3 uses "self.tableView" but it is not a TableViewController class (so mine is self.offersRootTableView or self.tableView)
+ * ??? Should refer to instance variable offersRootTableView or self.tableView here?
  */
+- (NSFetchedResultsController *)fetchedResultsController {
+    
+    if (__fetchedResultsController != nil) {
+        return __fetchedResultsController;
+    }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    Youpon_Pt_2AppDelegate *appDelegate = (Youpon_Pt_2AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
+    
+    //Entity Description - Offer
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Offer" inManagedObjectContext:managedObjectContext];
+    
+    //Section key - sorting the section
+    NSString *sectionKey = nil;
+    
+    NSSortDescriptor *sortDescriptor1 = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc] initWithKey:@"byline" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor1, sortDescriptor2, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    [sortDescriptor1 release];
+    [sortDescriptor2 release];
+    [sortDescriptors release];
+    sectionKey = @"name";
+    
+    
+    [fetchRequest setEntity:entity];
+    [fetchRequest setFetchBatchSize:20];
+    
+    NSFetchedResultsController *frc = [[NSFetchedResultsController alloc] 
+                                       initWithFetchRequest:fetchRequest 
+                                       managedObjectContext:managedObjectContext 
+                                       sectionNameKeyPath:sectionKey
+                                       cacheName:@"Offer"];
+    frc.delegate = self;
+    __fetchedResultsController = frc;
+    [fetchRequest release];
+    
+    return __fetchedResultsController;
+}
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView beginUpdates];
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView endUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+    
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        case NSFetchedResultsChangeUpdate: {
+            NSString *sectionKeyPath = [controller sectionNameKeyPath];
+            if (sectionKeyPath == nil) {
+                break;
+            }
+            NSManagedObject *changedObject = [controller objectAtIndexPath:indexPath];
+            NSArray *keyParts = [sectionKeyPath componentsSeparatedByString:@"."];
+            id currentKeyValue = [changedObject valueForKeyPath:sectionKeyPath];
+            for (int i = 0; i < [keyParts count] - 1; i++) {
+                NSString *onePart = [keyParts objectAtIndex:i];
+                changedObject = [changedObject valueForKey:onePart];
+            }
+            sectionKeyPath = [keyParts lastObject];
+            NSDictionary *committedValues = [changedObject committedValuesForKeys:nil];
+            
+            if ([[committedValues valueForKeyPath:sectionKeyPath] isEqual:currentKeyValue]) {
+                break;
+            }
+            
+            NSUInteger tableSectionCount = [self.tableView numberOfSections];
+            NSUInteger frcSectionCount = [[controller sections] count];
+            if (tableSectionCount != frcSectionCount) {
+                //Need to insert a section
+                NSArray *sections = controller.sections;
+                NSInteger newSectionLocation = -1;
+                for (id oneSection in sections) {
+                    NSString *sectionName = [oneSection name];
+                    if ([currentKeyValue isEqual:sectionName]) {
+                        newSectionLocation = [sections indexOfObject:oneSection];
+                        break;
+                    }
+                }
+                if (newSectionLocation == -1) {
+                    return; //this should not happen
+                }
+                
+                if (!(newSectionLocation == 0 && tableSectionCount == 1) && [self.tableView numberOfRowsInSection:0] == 0) {
+                    [self.tableView insertSections:[NSIndexSet indexSetWithIndex:newSectionLocation] withRowAnimation:UITableViewRowAnimationFade];
+                }
+                
+                NSUInteger indices[2] = {newSectionLocation, 0};
+                newIndexPath = [[[NSIndexPath alloc] initWithIndexes:indices length:2] autorelease];
+            }
+        }
+        case NSFetchedResultsChangeMove:
+            if (newIndexPath != nil) {
+                [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationRight];
+            }
+            else {
+                [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:[indexPath section]] withRowAnimation:UITableViewRowAnimationFade];
+            }
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+    
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            if (!(sectionIndex == 0 && [self.tableView numberOfSections] == 1) && [self.tableView numberOfRowsInSection:0] == 0) {
+                [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            }
+            break;
+        case NSFetchedResultsChangeDelete:
+            if (!(sectionIndex == 0 && [self.tableView numberOfSections] == 1) && [self.tableView numberOfRowsInSection:0] == 0) {
+                [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            }
+            break;
+        case NSFetchedResultsChangeMove:
+            break;
+        case NSFetchedResultsChangeUpdate:
+            break;
+        default:
+            break;
+    }
+}
+
+#pragma mark -
+#pragma mark UIAlertView Delegate
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    exit(-1);
+}
+
 
 @end
