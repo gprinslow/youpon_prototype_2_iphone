@@ -17,7 +17,6 @@
 
 
 @implementation OffersRootTableViewController
-@synthesize offersRootTableView;
 @synthesize fetchedResultsController=__fetchedResultsController;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -31,7 +30,6 @@
 
 - (void)dealloc
 {
-    [offersRootTableView release];
     [__fetchedResultsController release];
     [super dealloc];
 }
@@ -59,6 +57,16 @@
     //Ch.3 Edits
     NSError *error = nil;
     if (![[self fetchedResultsController] performFetch:&error]) {
+        NSLog(@"Perform Fetch - Unresolved error %@, %@", error, [error userInfo]);
+        NSArray *detailedErrors = [[error userInfo] objectForKey:NSDetailedErrorsKey];
+        if (detailedErrors != nil && [detailedErrors count] > 0) {
+            for (NSError *detailedError in detailedErrors) {
+                NSLog(@"--Detailed Error: %@", [detailedError userInfo]);
+            }
+        }
+        else {
+            NSLog(@"--%@", [error userInfo]);
+        }
         UIAlertView *alert = [[UIAlertView alloc] 
                               initWithTitle:NSLocalizedString(@"Error loading data", @"Error loading data") 
                               message:[NSString stringWithFormat:NSLocalizedString(@"Error was: %@, quitting.", @"Error was: %@, quitting."), [error localizedDescription]] 
@@ -76,7 +84,6 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-    self.offersRootTableView = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -190,7 +197,16 @@
         NSError *error;
         
         if (![context save:&error]) {
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            NSLog(@"Error saving deleted entity: %@", [error localizedDescription]);
+            NSArray *detailedErrors = [[error userInfo] objectForKey:NSDetailedErrorsKey];
+            if (detailedErrors != nil && [detailedErrors count] > 0) {
+                for (NSError *detailedError in detailedErrors) {
+                    NSLog(@"--Detailed Error: %@", [detailedError userInfo]);
+                }
+            }
+            else {
+                NSLog(@"--%@", [error userInfo]);
+            }
             UIAlertView *alert = [[UIAlertView alloc] 
                                   initWithTitle:NSLocalizedString(@"Error saving after delete", @"Error saving after delete") 
                                   message:[NSString stringWithFormat:NSLocalizedString(@"Error was: %@, quitting.", @"Error was: %@, quitting."), [error localizedDescription]] 
@@ -251,6 +267,15 @@
     NSError *error;
     if (![context save:&error]) {
         NSLog(@"Error saving entity: %@", [error localizedDescription]);
+        NSArray *detailedErrors = [[error userInfo] objectForKey:NSDetailedErrorsKey];
+        if (detailedErrors != nil && [detailedErrors count] > 0) {
+            for (NSError *detailedError in detailedErrors) {
+                NSLog(@"--Detailed Error: %@", [detailedError userInfo]);
+            }
+        }
+        else {
+            NSLog(@"--%@", [error userInfo]);
+        }
     }
     
     // TODO: Instantiate detail editing controller and push onto stack

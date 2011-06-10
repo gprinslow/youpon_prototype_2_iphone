@@ -11,12 +11,9 @@
 
 @interface OffersRootTableViewController : UITableViewController <NSFetchedResultsControllerDelegate, UIAlertViewDelegate> {
     
-    UITableView *offersRootTableView;
-    
     @private
     NSFetchedResultsController *__fetchedResultsController;
 }
-@property (nonatomic, retain) IBOutlet UITableView *offersRootTableView;
 @property (nonatomic, readonly) NSFetchedResultsController *fetchedResultsController;
 
 - (IBAction)toggleEdit;

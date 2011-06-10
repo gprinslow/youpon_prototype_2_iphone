@@ -11,9 +11,7 @@
 
 @interface OffersRootViewController : UIViewController {
     
-    OffersRootTableViewController *offersRootTableViewController;
 }
 
-@property (nonatomic, retain) IBOutlet OffersRootTableViewController *offersRootTableViewController;
 
 @end
