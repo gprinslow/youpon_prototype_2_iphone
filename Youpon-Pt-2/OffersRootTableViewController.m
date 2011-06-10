@@ -11,6 +11,7 @@
 
 @implementation OffersRootTableViewController
 @synthesize offersRootTableView;
+@synthesize fetchedResultsController=__fetchedResultsController;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -24,6 +25,7 @@
 - (void)dealloc
 {
     [offersRootTableView release];
+    [__fetchedResultsController release];
     [super dealloc];
 }
 
@@ -46,6 +48,27 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    //Ch.3 Edits
+    NSError *error = nil;
+    if (![[self fetchedResultsController] performFetch:&error]) {
+        UIAlertView *alert = [[UIAlertView alloc] 
+                              initWithTitle:NSLocalizedString("Error loading data", "Error loading data") 
+                              message:[NSString stringWithFormat:NSLocalizedString(@"Error was: %@, quitting.", @"Error was: %@, quitting."), [error localizedDescription]] 
+                              delegate:self 
+                              cancelButtonTitle:NSLocalizedString(@"OK, nevermind", @"OK, nevermind")otherButtonTitles:nil];
+        [alert show];
+    }
+    
+    //Moved this from viewWillAppear in Ch.3
+    //Link edit button to toggleEdit
+    UIBarButtonItem *editButton = self.editButtonItem;
+    [editButton setTarget:self];
+    [editButton setAction:@selector(toggleEdit)];
+    self.navigationItem.leftBarButtonItem = editButton;
+    
+    //Add button
+    
 }
 
 - (void)viewDidUnload
@@ -53,6 +76,7 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.offersRootTableView = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -85,28 +109,42 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    //Ch.3 edits
+    NSUInteger count = [[self.fetchedResultsController sections] count];
+    if (count == 0) {
+        count = 1;
+    }
+    return count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    //Ch.3 edits
+    NSArray *sections = [self.fetchedResultsController sections];
+    NSUInteger count = 0;
+    if ([sections count]) {
+        id <NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
+        count = [sectionInfo numberOfObjects];
+    }
+    return count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    //Ch.3 edits
+    static NSString *OfferCellIdentifier = @"OfferCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:OfferCellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:OfferCellIdentifier] autorelease];
     }
     
     // Configure the cell...
+    NSManagedObject *oneOffer = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = [oneOffer valueForKey:@"title"];
+    cell.detailTextLabel.text = [oneOffer valueForKey:@"byline"];
     
     return cell;
 }
@@ -120,10 +158,12 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //Ch.3 Edits
+    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -132,7 +172,7 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -162,6 +202,32 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
+    //TODO: Instantiate detail editing controller and push onto stack
+}
+
+#pragma mark - Custom methods added - Ch.3
+
+- (void)addOffer {
+    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
+    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+    
+    NSError *error;
+    if (![context save:&error]) {
+        NSLog(@"Error saving entity: %@", [error localizedDescription]);
+    }
+    
+    // TODO: Instantiate detail editing controller and push onto stack
+}
+
+- (IBAction)toggleEdit {
+    //??? Should refer to instance variable offersRootTableView or self.tableView here?
+    //Editing YES means the table view is currently in editing mode (Note this is reversed from Ch.3 b/c theirs was confusing)
+    BOOL editing = self.offersRootTableView.editing;
+    self.navigationItem.rightBarButtonItem.enabled = editing;
+    self.navigationItem.leftBarButtonItem.title = (editing) ? NSLocalizedString(@"Edit", @"Edit") : NSLocalizedString(@"Done", "Done");
+    //Flip the editing status on the table
+    [self.offersRootTableView setEditing:!editing animated:YES];
 }
 
 @end

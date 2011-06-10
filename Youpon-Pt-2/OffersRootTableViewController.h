@@ -9,10 +9,16 @@
 #import <UIKit/UIKit.h>
 
 
-@interface OffersRootTableViewController : UITableViewController {
+@interface OffersRootTableViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
     
     UITableView *offersRootTableView;
+    
+    @private
+    NSFetchedResultsController *__fetchedResultsController;
 }
 @property (nonatomic, retain) IBOutlet UITableView *offersRootTableView;
+@property (nonatomic, readonly) NSFetchedResultsController *fetchedResultsController;
+
+- (IBAction)toggleEdit;
 
 @end
