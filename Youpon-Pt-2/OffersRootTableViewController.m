@@ -291,14 +291,14 @@
     //Section key - sorting the section
     NSString *sectionKey = nil;
     
-    NSSortDescriptor *sortDescriptor1 = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSSortDescriptor *sortDescriptor1 = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
     NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc] initWithKey:@"byline" ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor1, sortDescriptor2, nil];
     [fetchRequest setSortDescriptors:sortDescriptors];
     [sortDescriptor1 release];
     [sortDescriptor2 release];
     [sortDescriptors release];
-    sectionKey = @"name";
+    sectionKey = @"title";
     
     
     [fetchRequest setEntity:entity];
