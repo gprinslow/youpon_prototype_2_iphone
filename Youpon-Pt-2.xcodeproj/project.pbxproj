@@ -53,6 +53,7 @@
 		85DA1FB813984E7B0020154F /* 172-pricetag.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1FA813984E7B0020154F /* 172-pricetag.png */; };
 		85DA1FB913984E7B0020154F /* 191-collection.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DA1FA913984E7B0020154F /* 191-collection.png */; };
 		85DA1FBD13984E990020154F /* LoginServiceStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DA1FBC13984E990020154F /* LoginServiceStub.m */; };
+		85EBEFD113A2FC17003405A8 /* NSArray-NestedArrays.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EBEFD013A2FC17003405A8 /* NSArray-NestedArrays.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,8 @@
 		85DA1FA913984E7B0020154F /* 191-collection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "191-collection.png"; sourceTree = "<group>"; };
 		85DA1FBB13984E990020154F /* LoginServiceStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginServiceStub.h; sourceTree = "<group>"; };
 		85DA1FBC13984E990020154F /* LoginServiceStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginServiceStub.m; sourceTree = "<group>"; };
+		85EBEFCF13A2FC17003405A8 /* NSArray-NestedArrays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray-NestedArrays.h"; sourceTree = "<group>"; };
+		85EBEFD013A2FC17003405A8 /* NSArray-NestedArrays.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray-NestedArrays.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +208,7 @@
 				85EBEFCC13A2F652003405A8 /* TO_DELETE */,
 				85DA1F6613984D7D0020154F /* Youpon_Pt_2AppDelegate.h */,
 				85DA1F6713984D7D0020154F /* Youpon_Pt_2AppDelegate.m */,
+				85EBEFCE13A2FB15003405A8 /* Categories */,
 				85DA1FBE13984E9F0020154F /* Classes */,
 				85DA1F8F13984DF80020154F /* CoreData */,
 				85DA1F8E13984DEA0020154F /* Interface */,
@@ -326,6 +330,15 @@
 				85D03FB413987E44008D4D97 /* OffersRootViewController.m */,
 			);
 			name = TO_DELETE;
+			sourceTree = "<group>";
+		};
+		85EBEFCE13A2FB15003405A8 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				85EBEFCF13A2FC17003405A8 /* NSArray-NestedArrays.h */,
+				85EBEFD013A2FC17003405A8 /* NSArray-NestedArrays.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -468,6 +481,7 @@
 				85D03FBE13987F34008D4D97 /* SettingsRootViewController.m in Sources */,
 				85D91F22139977F100265126 /* LoginRootViewController.m in Sources */,
 				852FF094139C1B14007C5475 /* OffersRootTableViewController.m in Sources */,
+				85EBEFD113A2FC17003405A8 /* NSArray-NestedArrays.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
