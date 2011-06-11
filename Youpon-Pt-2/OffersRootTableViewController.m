@@ -105,6 +105,10 @@
                                   action:@selector(addOffer)];
     self.navigationItem.rightBarButtonItem = addButton;
     [addButton release];
+    
+    //Added - to reload data
+    [self.tableView reloadData];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated

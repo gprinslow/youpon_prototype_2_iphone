@@ -98,6 +98,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    //Added - according to online Ch.4 typos
+    [self.tableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
