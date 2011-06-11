@@ -155,8 +155,6 @@
 		85D03FB213987DD5008D4D97 /* UIControllers */ = {
 			isa = PBXGroup;
 			children = (
-				85D03FB313987E44008D4D97 /* OffersRootViewController.h */,
-				85D03FB413987E44008D4D97 /* OffersRootViewController.m */,
 				85D03FB613987E71008D4D97 /* MapRootViewController.h */,
 				85D03FB713987E71008D4D97 /* MapRootViewController.m */,
 				85D03FB913987E85008D4D97 /* ProfileRootViewController.h */,
@@ -204,6 +202,7 @@
 		85DA1F5D13984D7D0020154F /* Youpon-Pt-2 */ = {
 			isa = PBXGroup;
 			children = (
+				85EBEFCC13A2F652003405A8 /* TO_DELETE */,
 				85DA1F6613984D7D0020154F /* Youpon_Pt_2AppDelegate.h */,
 				85DA1F6713984D7D0020154F /* Youpon_Pt_2AppDelegate.m */,
 				85DA1FBE13984E9F0020154F /* Classes */,
@@ -252,7 +251,6 @@
 			isa = PBXGroup;
 			children = (
 				85DA1F6913984D7D0020154F /* MainWindow.xib */,
-				85D91F1613995DF900265126 /* OffersRootView.xib */,
 				85D91F0F139953C700265126 /* MapRootView.xib */,
 				85D91F12139953D600265126 /* ProfileRootView.xib */,
 				85D91F14139955D900265126 /* SettingsRootView.xib */,
@@ -318,6 +316,16 @@
 				85D03FA613984F30008D4D97 /* ServiceResponse.m */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		85EBEFCC13A2F652003405A8 /* TO_DELETE */ = {
+			isa = PBXGroup;
+			children = (
+				85D91F1613995DF900265126 /* OffersRootView.xib */,
+				85D03FB313987E44008D4D97 /* OffersRootViewController.h */,
+				85D03FB413987E44008D4D97 /* OffersRootViewController.m */,
+			);
+			name = TO_DELETE;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
