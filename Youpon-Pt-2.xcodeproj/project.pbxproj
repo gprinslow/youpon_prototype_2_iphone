@@ -55,6 +55,7 @@
 		85DA1FBD13984E990020154F /* LoginServiceStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DA1FBC13984E990020154F /* LoginServiceStub.m */; };
 		85EBEFD113A2FC17003405A8 /* NSArray-NestedArrays.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EBEFD013A2FC17003405A8 /* NSArray-NestedArrays.m */; };
 		85EBEFD413A2FE36003405A8 /* OfferValueDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EBEFD313A2FE36003405A8 /* OfferValueDisplay.m */; };
+		85EBEFD713A30BAE003405A8 /* OffersEditTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EBEFD613A30BAE003405A8 /* OffersEditTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,8 @@
 		85EBEFD013A2FC17003405A8 /* NSArray-NestedArrays.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray-NestedArrays.m"; sourceTree = "<group>"; };
 		85EBEFD213A2FE36003405A8 /* OfferValueDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferValueDisplay.h; sourceTree = "<group>"; };
 		85EBEFD313A2FE36003405A8 /* OfferValueDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferValueDisplay.m; sourceTree = "<group>"; };
+		85EBEFD513A30BAE003405A8 /* OffersEditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffersEditTableViewController.h; sourceTree = "<group>"; };
+		85EBEFD613A30BAE003405A8 /* OffersEditTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OffersEditTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +174,8 @@
 				85D91F21139977F100265126 /* LoginRootViewController.m */,
 				852FF092139C1B14007C5475 /* OffersRootTableViewController.h */,
 				852FF093139C1B14007C5475 /* OffersRootTableViewController.m */,
+				85EBEFD513A30BAE003405A8 /* OffersEditTableViewController.h */,
+				85EBEFD613A30BAE003405A8 /* OffersEditTableViewController.m */,
 			);
 			name = UIControllers;
 			sourceTree = "<group>";
@@ -488,6 +493,7 @@
 				852FF094139C1B14007C5475 /* OffersRootTableViewController.m in Sources */,
 				85EBEFD113A2FC17003405A8 /* NSArray-NestedArrays.m in Sources */,
 				85EBEFD413A2FE36003405A8 /* OfferValueDisplay.m in Sources */,
+				85EBEFD713A30BAE003405A8 /* OffersEditTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
