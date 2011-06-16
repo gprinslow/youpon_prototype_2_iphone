@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		852DAA1E13AAAEB400432DB4 /* ManagedObjectAttributeEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 852DAA1D13AAAEB400432DB4 /* ManagedObjectAttributeEditor.m */; };
 		852DAA2213AAB4AE00432DB4 /* ManagedObjectStringEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 852DAA2113AAB4AE00432DB4 /* ManagedObjectStringEditor.m */; };
+		852DAA2513AAC4DF00432DB4 /* ManagedObjectDateEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 852DAA2413AAC4DF00432DB4 /* ManagedObjectDateEditor.m */; };
 		852FF094139C1B14007C5475 /* OffersRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 852FF093139C1B14007C5475 /* OffersRootTableViewController.m */; };
 		85D03FA713984F30008D4D97 /* ServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D03FA413984F30008D4D97 /* ServiceRequest.m */; };
 		85D03FA813984F30008D4D97 /* ServiceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D03FA613984F30008D4D97 /* ServiceResponse.m */; };
@@ -75,6 +76,8 @@
 		852DAA1D13AAAEB400432DB4 /* ManagedObjectAttributeEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedObjectAttributeEditor.m; sourceTree = "<group>"; };
 		852DAA2013AAB4AE00432DB4 /* ManagedObjectStringEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedObjectStringEditor.h; sourceTree = "<group>"; };
 		852DAA2113AAB4AE00432DB4 /* ManagedObjectStringEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedObjectStringEditor.m; sourceTree = "<group>"; };
+		852DAA2313AAC4DF00432DB4 /* ManagedObjectDateEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedObjectDateEditor.h; sourceTree = "<group>"; };
+		852DAA2413AAC4DF00432DB4 /* ManagedObjectDateEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedObjectDateEditor.m; sourceTree = "<group>"; };
 		852FF092139C1B14007C5475 /* OffersRootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffersRootTableViewController.h; sourceTree = "<group>"; };
 		852FF093139C1B14007C5475 /* OffersRootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OffersRootTableViewController.m; sourceTree = "<group>"; };
 		85D03FA313984F30008D4D97 /* ServiceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceRequest.h; sourceTree = "<group>"; };
@@ -336,6 +339,8 @@
 				852DAA1D13AAAEB400432DB4 /* ManagedObjectAttributeEditor.m */,
 				852DAA2013AAB4AE00432DB4 /* ManagedObjectStringEditor.h */,
 				852DAA2113AAB4AE00432DB4 /* ManagedObjectStringEditor.m */,
+				852DAA2313AAC4DF00432DB4 /* ManagedObjectDateEditor.h */,
+				852DAA2413AAC4DF00432DB4 /* ManagedObjectDateEditor.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -506,6 +511,7 @@
 				85EBEFD713A30BAE003405A8 /* OffersEditTableViewController.m in Sources */,
 				852DAA1E13AAAEB400432DB4 /* ManagedObjectAttributeEditor.m in Sources */,
 				852DAA2213AAB4AE00432DB4 /* ManagedObjectStringEditor.m in Sources */,
+				852DAA2513AAC4DF00432DB4 /* ManagedObjectDateEditor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
