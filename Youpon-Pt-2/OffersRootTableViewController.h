@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "OffersEditTableViewController.h"
 
 @interface OffersRootTableViewController : UITableViewController <NSFetchedResultsControllerDelegate, UIAlertViewDelegate> {
     
     @private
     NSFetchedResultsController *__fetchedResultsController;
+    OffersEditTableViewController *editTableViewController;
 }
 @property (nonatomic, readonly) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) IBOutlet OffersEditTableViewController *editTableViewController;
 
 - (IBAction)toggleEdit;
 

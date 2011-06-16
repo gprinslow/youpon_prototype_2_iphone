@@ -18,12 +18,14 @@
 
 @implementation OffersRootTableViewController
 @synthesize fetchedResultsController=__fetchedResultsController;
+@synthesize editTableViewController;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        //editTableViewController = [[[OffersEditTableViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
     }
     return self;
 }
@@ -31,6 +33,7 @@
 - (void)dealloc
 {
     [__fetchedResultsController release];
+    [editTableViewController release];
     [super dealloc];
 }
 
@@ -258,7 +261,10 @@
      */
     
     //Ch.3 edits
-    //TODO: Instantiate detail editing controller and push onto stack
+    //Instantiate detail editing controller and push onto stack
+    editTableViewController.offer = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self.navigationController pushViewController:editTableViewController animated:YES];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - Custom methods added - Ch.3 - REFACTOR this b/c unnecessary with TableViewController
@@ -282,7 +288,10 @@
         }
     }
     
-    // TODO: Instantiate detail editing controller and push onto stack
+    //Instantiate detail editing controller and push onto stack
+    editTableViewController.offer = newManagedObject;
+    [self.navigationController pushViewController:editTableViewController animated:YES];    
+    
 }
 
 - (IBAction)toggleEdit {
