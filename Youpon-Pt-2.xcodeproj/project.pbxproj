@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		852DAA1E13AAAEB400432DB4 /* ManagedObjectAttributeEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 852DAA1D13AAAEB400432DB4 /* ManagedObjectAttributeEditor.m */; };
 		852FF094139C1B14007C5475 /* OffersRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 852FF093139C1B14007C5475 /* OffersRootTableViewController.m */; };
 		85D03FA713984F30008D4D97 /* ServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D03FA413984F30008D4D97 /* ServiceRequest.m */; };
 		85D03FA813984F30008D4D97 /* ServiceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D03FA613984F30008D4D97 /* ServiceResponse.m */; };
@@ -69,6 +70,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		852DAA1C13AAAEB400432DB4 /* ManagedObjectAttributeEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedObjectAttributeEditor.h; sourceTree = "<group>"; };
+		852DAA1D13AAAEB400432DB4 /* ManagedObjectAttributeEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedObjectAttributeEditor.m; sourceTree = "<group>"; };
 		852FF092139C1B14007C5475 /* OffersRootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffersRootTableViewController.h; sourceTree = "<group>"; };
 		852FF093139C1B14007C5475 /* OffersRootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OffersRootTableViewController.m; sourceTree = "<group>"; };
 		85D03FA313984F30008D4D97 /* ServiceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceRequest.h; sourceTree = "<group>"; };
@@ -326,6 +329,8 @@
 				85D03FA413984F30008D4D97 /* ServiceRequest.m */,
 				85D03FA513984F30008D4D97 /* ServiceResponse.h */,
 				85D03FA613984F30008D4D97 /* ServiceResponse.m */,
+				852DAA1C13AAAEB400432DB4 /* ManagedObjectAttributeEditor.h */,
+				852DAA1D13AAAEB400432DB4 /* ManagedObjectAttributeEditor.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -494,6 +499,7 @@
 				85EBEFD113A2FC17003405A8 /* NSArray-NestedArrays.m in Sources */,
 				85EBEFD413A2FE36003405A8 /* OfferValueDisplay.m in Sources */,
 				85EBEFD713A30BAE003405A8 /* OffersEditTableViewController.m in Sources */,
+				852DAA1E13AAAEB400432DB4 /* ManagedObjectAttributeEditor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

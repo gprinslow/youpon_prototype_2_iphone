@@ -145,7 +145,7 @@
 								<reference key="IBUITableHeaderView" ref="340511766"/>
 							</object>
 							<object class="IBUINavigationItem" key="IBUINavigationItem" id="185312770">
-								<string key="IBUITitle">Item</string>
+								<string key="IBUITitle">Offers</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 							<reference key="IBUIParentViewController" ref="913392468"/>
