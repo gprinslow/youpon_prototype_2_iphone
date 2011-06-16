@@ -73,7 +73,7 @@
     [cancelButton release];
     
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] 
-                                     initWithTitle:NSLocalizedString(@"Save", @"Cancel - for button to save changes") 
+                                     initWithTitle:NSLocalizedString(@"Save", @"Save - for button to save changes") 
                                      style:UIBarButtonSystemItemDone
                                      target:self
                                      action:@selector(save)];
