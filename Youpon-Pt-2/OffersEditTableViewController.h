@@ -17,6 +17,7 @@
     NSArray *rowLabels;
     NSArray *rowKeys;
     NSArray *rowControllers;
+    NSArray *rowArguments;
 }
 
 @property (nonatomic, retain) NSManagedObject *offer;

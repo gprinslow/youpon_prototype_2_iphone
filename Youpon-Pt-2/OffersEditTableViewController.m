@@ -93,7 +93,7 @@
                       //Section 2
                       [NSArray arrayWithObjects:
                        @"ManagedObjectStringEditor",
-                       @"ManagedObjectStringEditor",
+                       @"ManagedObjectSingleSelectionListEditor",
                        @"ManagedObjectStringEditor",
                        @"ManagedObjectDateEditor",
                        @"ManagedObjectDateEditor",
@@ -101,6 +101,20 @@
                       
                       //Sentinel
                       nil];
+    
+    rowArguments = [[NSArray alloc] initWithObjects:
+                    //Section 1
+                    [NSArray arrayWithObject:[NSNull null]],
+                    
+                    //Section 2
+                    [NSArray arrayWithObjects:
+                     [NSNull null],
+                     [NSDictionary dictionaryWithObject:[NSArray arrayWithObjects:@"Coffee", @"Entertainment", @"Food", @"Haircuts", nil] forKey:@"list"],
+                     [NSNull null],
+                     nil],
+                    
+                    //Sentinel
+                    nil];
     
     
 }
@@ -241,6 +255,16 @@
     controller.managedObject = offer;
     controller.labelString = rowLabel;
     controller.title = rowLabel;
+    
+    NSDictionary *args = [rowArguments nestedObjectAtIndexPath:indexPath];
+    if ([args isKindOfClass:[NSDictionary class]]) {
+        if (args != nil) {
+            for (NSString *oneKey in args) {
+                id oneArg = [args objectForKey:oneKey];
+                [controller setValue:oneArg forKey:oneKey];
+            }
+        }
+    }
     
     [self.navigationController pushViewController:controller animated:YES];
     
