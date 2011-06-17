@@ -15,7 +15,9 @@
 #import "ServiceRequest.h"
 #import "ServiceResponse.h"
 #import "LoginServiceStub.h"
-
+#import "RedeemServiceRequest.h"
+#import "RedeemServiceResponse.h"
+#import "RedeemServiceStub.h"
 
 
 @interface Youpon_Pt_2AppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
@@ -35,5 +37,6 @@
 
 //Custom methods - Service Calls
 - (ServiceResponse *)callLoginService:(ServiceRequest *)loginRequest;
+- (RedeemServiceResponse *)callRedeemService:(RedeemServiceRequest *)redeemRequest;
 
 @end

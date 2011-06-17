@@ -10,6 +10,7 @@
 #import "NSArray-NestedArrays.h"
 #import "OfferValueDisplay.h"
 #import "ManagedObjectAttributeEditor.h"
+#import "OffersRedeemViewController.h"
 
 @implementation OffersEditTableViewController
 
@@ -206,7 +207,6 @@
         redeemButton.frame = CGRectMake(200.0f, 4.0f, 110.0f, 30.0f);
         
         cell.accessoryView = redeemButton;
-        
     }
     else {
         id <OfferValueDisplay, NSObject> rowValue = [offer valueForKey:rowKey];
@@ -276,27 +276,34 @@
     NSString *rowLabel = [rowLabels nestedObjectAtIndexPath:indexPath];
     NSString *rowKey = [rowKeys nestedObjectAtIndexPath:indexPath];
     
-    Class controllerClass = NSClassFromString(controllerClassName);
-    ManagedObjectAttributeEditor *controller = [controllerClass alloc];
-    controller = [controller initWithStyle:UITableViewStyleGrouped];
-    controller.keypath = rowKey;
-    controller.managedObject = offer;
-    controller.labelString = rowLabel;
-    controller.title = rowLabel;
-    
-    NSDictionary *args = [rowArguments nestedObjectAtIndexPath:indexPath];
-    if ([args isKindOfClass:[NSDictionary class]]) {
-        if (args != nil) {
-            for (NSString *oneKey in args) {
-                id oneArg = [args objectForKey:oneKey];
-                [controller setValue:oneArg forKey:oneKey];
+    if ([rowKey isEqualToString:@"redeemButton"]) {
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+        [self redeemOffer];
+    }
+    else {
+            
+        Class controllerClass = NSClassFromString(controllerClassName);
+        ManagedObjectAttributeEditor *controller = [controllerClass alloc];
+        controller = [controller initWithStyle:UITableViewStyleGrouped];
+        controller.keypath = rowKey;
+        controller.managedObject = offer;
+        controller.labelString = rowLabel;
+        controller.title = rowLabel;
+        
+        NSDictionary *args = [rowArguments nestedObjectAtIndexPath:indexPath];
+        if ([args isKindOfClass:[NSDictionary class]]) {
+            if (args != nil) {
+                for (NSString *oneKey in args) {
+                    id oneArg = [args objectForKey:oneKey];
+                    [controller setValue:oneArg forKey:oneKey];
+                }
             }
         }
+        
+        [self.navigationController pushViewController:controller animated:YES];
+        
+        [controller release];
     }
-    
-    [self.navigationController pushViewController:controller animated:YES];
-    
-    [controller release];
 }
 
 #pragma mark - Table view - added methods (Ch. 4)
@@ -310,9 +317,13 @@
 
 #pragma mark - Custom methods
 -(IBAction)redeemOffer {
-    NSLog(@"Redeem tapped");
+    OffersRedeemViewController *redeemViewController = [[OffersRedeemViewController alloc] initWithNibName:@"OffersRedeemView" bundle:nil];
     
+    [redeemViewController setOffer:offer];
     
+    [self.navigationController pushViewController:redeemViewController animated:YES];
+    
+    [redeemViewController release];
 }
 
 

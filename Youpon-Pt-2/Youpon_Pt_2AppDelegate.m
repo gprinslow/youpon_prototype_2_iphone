@@ -230,6 +230,12 @@
     return [loginService callLoginServiceStub:loginRequest];
 }
 
+- (RedeemServiceResponse *)callRedeemService:(RedeemServiceRequest *)redeemRequest {
+    RedeemServiceStub *redeemService = [[[RedeemServiceStub alloc] init] autorelease];
+    
+    return [redeemService callRedeemServiceStub:redeemRequest];
+}
+
 #pragma mark - Tab Bar Controller Delegate methods
 
 
