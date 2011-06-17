@@ -54,7 +54,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    sectionNames = [[NSArray alloc] initWithObjects:[NSNull null], NSLocalizedString(@"General", @"General"), nil];
+    sectionNames = [[NSArray alloc] initWithObjects:[NSNull null], NSLocalizedString(@"Redeem Offer", @"Redeem Offer"), NSLocalizedString(@"Details", @"Details"), nil];
     
     rowLabels = [[NSArray alloc] initWithObjects:
                  
@@ -64,9 +64,12 @@
                  
                  //Section 2
                  [NSArray arrayWithObjects:
+                  NSLocalizedString(@"Redeem", @"Redeem"), nil],
+                 
+                 //Section 3
+                 [NSArray arrayWithObjects:
                   NSLocalizedString(@"Byline", @"Byline"),
                   NSLocalizedString(@"Category", @"Category"),
-                  NSLocalizedString(@"Number Offered", @"Number Offered"),
                   NSLocalizedString(@"Start Date", @"Start Date"),
                   NSLocalizedString(@"Expiration Date", @"Expiration Date"),
                   nil],
@@ -80,7 +83,10 @@
                [NSArray arrayWithObjects:@"title", nil],
                
                //Section 2
-               [NSArray arrayWithObjects:@"byline", @"category", @"numberOffered", @"startDate", @"expirationDate", nil],
+               [NSArray arrayWithObjects:@"redeemButton", nil],
+               
+               //Section 3
+               [NSArray arrayWithObjects:@"byline", @"category", @"startDate", @"expirationDate", nil],
                
                //Sentinel
                nil];
@@ -91,10 +97,12 @@
                       [NSArray arrayWithObject:@"ManagedObjectStringEditor"],
                       
                       //Section 2
+                      [NSArray arrayWithObject:[NSNull null]],
+                      
+                      //Section 3
                       [NSArray arrayWithObjects:
                        @"ManagedObjectStringEditor",
                        @"ManagedObjectSingleSelectionListEditor",
-                       @"ManagedObjectStringEditor",
                        @"ManagedObjectDateEditor",
                        @"ManagedObjectDateEditor",
                        nil],
@@ -107,6 +115,9 @@
                     [NSArray arrayWithObject:[NSNull null]],
                     
                     //Section 2
+                    [NSArray arrayWithObject:[NSNull null]],
+                    
+                    //Section 3
                     [NSArray arrayWithObjects:
                      [NSNull null],
                      [NSDictionary dictionaryWithObject:[NSArray arrayWithObjects:@"Coffee", @"Entertainment", @"Food", @"Haircuts", nil] forKey:@"list"],
@@ -171,22 +182,39 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"OfferEditCell";
+    static NSString *OfferEditCellIdentifier = @"OfferEditCellIdentifier";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:OfferEditCellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:OfferEditCellIdentifier] autorelease];
     }
     
     // Configure the cell...
     NSString *rowKey = [rowKeys nestedObjectAtIndexPath:indexPath];
     NSString *rowLabel = [rowLabels nestedObjectAtIndexPath:indexPath];
     
-    id <OfferValueDisplay, NSObject> rowValue = [offer valueForKey:rowKey];
-    
-    cell.detailTextLabel.text = [rowValue offerValueDisplay];
-    cell.textLabel.text = rowLabel;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    if ([rowKey isEqualToString:@"redeemButton"]) {
+        cell.textLabel.text = rowLabel;
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"Only %@ left!", [offer valueForKey:@"numberOffered"]];
+        
+        UIButton *redeemButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        
+        [redeemButton addTarget:self action:@selector(redeemOffer) forControlEvents:UIControlEventTouchUpInside];
+        [redeemButton setTitle:@"Redeem Now" forState:UIControlStateNormal];
+
+        redeemButton.frame = CGRectMake(200.0f, 4.0f, 110.0f, 30.0f);
+        
+        cell.accessoryView = redeemButton;
+        
+    }
+    else {
+        id <OfferValueDisplay, NSObject> rowValue = [offer valueForKey:rowKey];
+             
+        cell.detailTextLabel.text = [rowValue offerValueDisplay];
+        cell.textLabel.text = rowLabel;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
     
     return cell;
 }
@@ -279,5 +307,13 @@
     }
     return title;
 }
+
+#pragma mark - Custom methods
+-(IBAction)redeemOffer {
+    NSLog(@"Redeem tapped");
+    
+    
+}
+
 
 @end

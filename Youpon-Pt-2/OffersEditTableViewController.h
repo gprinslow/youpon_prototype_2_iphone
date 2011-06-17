@@ -22,5 +22,6 @@
 
 @property (nonatomic, retain) NSManagedObject *offer;
 
+-(IBAction)redeemOffer;
 
 @end

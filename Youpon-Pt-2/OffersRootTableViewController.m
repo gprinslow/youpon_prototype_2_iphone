@@ -164,7 +164,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //Ch.3 edits
-    static NSString *OfferCellIdentifier = @"OfferCell";
+    static NSString *OfferCellIdentifier = @"OfferCellIdentifier";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:OfferCellIdentifier];
     if (cell == nil) {
