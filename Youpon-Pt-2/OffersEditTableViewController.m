@@ -9,6 +9,7 @@
 #import "OffersEditTableViewController.h"
 #import "NSArray-NestedArrays.h"
 #import "OfferValueDisplay.h"
+#import "ManagedObjectAttributeEditor.h"
 
 @implementation OffersEditTableViewController
 
@@ -84,7 +85,23 @@
                //Sentinel
                nil];
     
-    //TODO: Populate rowControllers array
+    //Populate rowControllers array
+    rowControllers = [[NSArray alloc] initWithObjects:
+                      //Section 1
+                      [NSArray arrayWithObject:@"ManagedObjectStringEditor"],
+                      
+                      //Section 2
+                      [NSArray arrayWithObjects:
+                       @"ManagedObjectStringEditor",
+                       @"ManagedObjectStringEditor",
+                       @"ManagedObjectStringEditor",
+                       @"ManagedObjectDateEditor",
+                       @"ManagedObjectDateEditor",
+                       nil],
+                      
+                      //Sentinel
+                      nil];
+    
     
 }
 
@@ -212,7 +229,22 @@
      [detailViewController release];
      */
     
-    // TODO: Push editing controller onto the stack
+    //Push editing controller onto the stack
+    NSString *controllerClassName = [rowControllers nestedObjectAtIndexPath:indexPath];
+    NSString *rowLabel = [rowLabels nestedObjectAtIndexPath:indexPath];
+    NSString *rowKey = [rowKeys nestedObjectAtIndexPath:indexPath];
+    
+    Class controllerClass = NSClassFromString(controllerClassName);
+    ManagedObjectAttributeEditor *controller = [controllerClass alloc];
+    controller = [controller initWithStyle:UITableViewStyleGrouped];
+    controller.keypath = rowKey;
+    controller.managedObject = offer;
+    controller.labelString = rowLabel;
+    controller.title = rowLabel;
+    
+    [self.navigationController pushViewController:controller animated:YES];
+    
+    [controller release];
 }
 
 #pragma mark - Table view - added methods (Ch. 4)
