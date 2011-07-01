@@ -39,6 +39,10 @@
 //    NSArray *tabBarControllers = [NSArray arrayWithObjects:offersRootNavController, mapRootViewController, profileRootViewController, settingsRootViewController, nil];
 //    rootTabBarController.viewControllers = tabBarControllers;
     
+    //Objective Resource - set URL of service
+    [ObjectiveResourceConfig setSite:@"http://localhost:3000/"];
+    
+    
     //Init the LoginView
     loginRootViewController = [[LoginRootViewController alloc] initWithNibName:@"LoginRootView" bundle:nil];
     

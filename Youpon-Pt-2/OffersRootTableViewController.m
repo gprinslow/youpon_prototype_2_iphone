@@ -14,6 +14,8 @@
 
 #import "OffersRootTableViewController.h"
 #import "Youpon_Pt_2AppDelegate.h"
+#import "ObjectiveResource.h"
+#import "Offer.h"
 
 
 @implementation OffersRootTableViewController
@@ -287,6 +289,27 @@
             NSLog(@"--%@", [error userInfo]);
         }
     }
+    
+    //Objective Resource - EXPERIMENTAL
+    Offer *offer = [[[Offer alloc] init] autorelease];
+    offer.type = [newManagedObject valueForKey:@"type"];
+    offer.title = [newManagedObject valueForKey:@"title"];
+    offer.byline = [newManagedObject valueForKey:@"byline"];
+    offer.category = [newManagedObject valueForKey:@"category"];
+    offer.detailedDescription = [newManagedObject valueForKey:@"detailedDescription"];
+    offer.termsConditions = [newManagedObject valueForKey:@"termsConditions"];
+    offer.retailPrice = [newManagedObject valueForKey:@"retailPrice"];
+    offer.discountPrice = [newManagedObject valueForKey:@"discountPrice"];
+    offer.percentOff = [newManagedObject valueForKey:@"percentOff"];
+    offer.dollarValue = [newManagedObject valueForKey:@"dollarValue"];
+    offer.validationRequired = [newManagedObject valueForKey:@"validationRequired"];
+    offer.numberOffered = [NSNumber numberWithInt:(int)[newManagedObject valueForKey:@"numberOffered"]];
+    offer.startDate = [newManagedObject valueForKey:@"startDate"];
+    offer.expirationDate = [newManagedObject valueForKey:@"expirationDate"];
+    offer.numberStampsRequired = [NSNumber numberWithInt:(int)[newManagedObject valueForKey:@"numberStampsRequired"]];
+    //SAVE new object
+    [offer saveRemote];
+    
     
     //Instantiate detail editing controller and push onto stack
     editTableViewController.offer = newManagedObject;

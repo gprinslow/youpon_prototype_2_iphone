@@ -7,7 +7,8 @@
 //
 
 #import "ManagedObjectStringEditor.h"
-
+#import "Offer.h"
+#import "ObjectiveResource.h"
 
 @implementation ManagedObjectStringEditor
 
@@ -157,6 +158,13 @@
     UITextField *textField = (UITextField *)[cell.contentView viewWithTag:kTextFieldTag];
     
     [self.managedObject setValue:textField.text forKey:self.keypath];
+    
+    //Objective Resource - EXPERIMENTAL
+    Offer *offer = [[[Offer alloc] init] autorelease];
+    [offer setValue:textField.text forKey:self.keypath];
+    [offer updateRemote];
+    
+    
     
     NSError *error;
     if (![managedObject.managedObjectContext save:&error]) {

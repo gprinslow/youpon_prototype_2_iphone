@@ -17,6 +17,7 @@
 		855C9C8E13ABD0F000924AA3 /* RedeemServiceStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 855C9C8D13ABD0F000924AA3 /* RedeemServiceStub.m */; };
 		855C9C9113ABD2D400924AA3 /* RedeemServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 855C9C9013ABD2D400924AA3 /* RedeemServiceRequest.m */; };
 		855C9C9413ABD32800924AA3 /* RedeemServiceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 855C9C9313ABD32800924AA3 /* RedeemServiceResponse.m */; };
+		8567AAD313BE31220061D98E /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8567AAD213BE31210061D98E /* Offer.m */; };
 		85D03FA713984F30008D4D97 /* ServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D03FA413984F30008D4D97 /* ServiceRequest.m */; };
 		85D03FA813984F30008D4D97 /* ServiceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D03FA613984F30008D4D97 /* ServiceResponse.m */; };
 		85D03FB513987E44008D4D97 /* OffersRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D03FB413987E44008D4D97 /* OffersRootViewController.m */; };
@@ -127,6 +128,8 @@
 		855C9C9013ABD2D400924AA3 /* RedeemServiceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedeemServiceRequest.m; sourceTree = "<group>"; };
 		855C9C9213ABD32800924AA3 /* RedeemServiceResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedeemServiceResponse.h; sourceTree = "<group>"; };
 		855C9C9313ABD32800924AA3 /* RedeemServiceResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedeemServiceResponse.m; sourceTree = "<group>"; };
+		8567AAD113BE31210061D98E /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
+		8567AAD213BE31210061D98E /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
 		85D03FA313984F30008D4D97 /* ServiceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceRequest.h; sourceTree = "<group>"; };
 		85D03FA413984F30008D4D97 /* ServiceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceRequest.m; sourceTree = "<group>"; };
 		85D03FA513984F30008D4D97 /* ServiceResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceResponse.h; sourceTree = "<group>"; };
@@ -286,6 +289,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8567AAD513BE31530061D98E /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				8567AAD113BE31210061D98E /* Offer.h */,
+				8567AAD213BE31210061D98E /* Offer.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
 		85D03FB213987DD5008D4D97 /* UIControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +359,7 @@
 				85EBEFCE13A2FB15003405A8 /* Categories */,
 				85DA1FBE13984E9F0020154F /* Classes */,
 				85DA1F8F13984DF80020154F /* CoreData */,
+				8567AAD513BE31530061D98E /* Objects */,
 				85DA1F8E13984DEA0020154F /* Interface */,
 				85D03FB213987DD5008D4D97 /* UIControllers */,
 				85DA1F9813984E5E0020154F /* Images */,
@@ -808,6 +821,7 @@
 				85DA3EF613BD5E9B00F81AD6 /* NSString+XMLSerializableSupport.m in Sources */,
 				85DA3EF713BD5E9B00F81AD6 /* ObjectiveResourceConfig.m in Sources */,
 				85DA3EF813BD5E9B00F81AD6 /* Response.m in Sources */,
+				8567AAD313BE31220061D98E /* Offer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
