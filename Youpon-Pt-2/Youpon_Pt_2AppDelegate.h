@@ -18,7 +18,6 @@
 #import "RedeemServiceRequest.h"
 #import "RedeemServiceResponse.h"
 #import "RedeemServiceStub.h"
-#import "ObjectiveResourceConfig.h"
 
 
 @interface Youpon_Pt_2AppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {

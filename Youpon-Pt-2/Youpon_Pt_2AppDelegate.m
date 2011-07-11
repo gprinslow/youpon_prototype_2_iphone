@@ -39,8 +39,6 @@
 //    NSArray *tabBarControllers = [NSArray arrayWithObjects:offersRootNavController, mapRootViewController, profileRootViewController, settingsRootViewController, nil];
 //    rootTabBarController.viewControllers = tabBarControllers;
     
-    //Objective Resource - set URL of service
-    [ObjectiveResourceConfig setSite:@"http://localhost:3000/"];
     
     
     //Init the LoginView
@@ -246,7 +244,7 @@
  // Optional UITabBarControllerDelegate method.
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
-    //TODO: fill in didSelectViewControlelr
+    //TODO: fill in didSelectViewController
 }
  
 

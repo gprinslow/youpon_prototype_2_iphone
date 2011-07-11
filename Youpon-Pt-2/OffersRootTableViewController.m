@@ -308,7 +308,7 @@
     offer.expirationDate = [newManagedObject valueForKey:@"expirationDate"];
     offer.numberStampsRequired = [NSNumber numberWithInt:(int)[newManagedObject valueForKey:@"numberStampsRequired"]];
     //SAVE new object
-    [offer saveRemote];
+
     
     
     //Instantiate detail editing controller and push onto stack
