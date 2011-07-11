@@ -43,11 +43,11 @@
 }
 
 - (NSInteger)count {
-    return [items count];
+    return [self.items count];
 }
 
 - (NSDictionary *)item:(NSInteger)index {
-    return [items objectAtIndex:index];
+    return [self.items objectAtIndex:index];
 }
 
 - (void)refreshItems {
@@ -94,7 +94,7 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     //Convert response from data into string (of JSON values)
     
-    NSString *responseString = [[NSString alloc] initWithData:self.data encoding:NSUTF8StringEncoding];
+    NSString *responseString = [[NSString alloc] initWithData:[self data] encoding:NSUTF8StringEncoding];
     
     SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
     
@@ -108,7 +108,7 @@
         self.items = [parsedJson objectForKey:@"items"];
         
         //Post notification that items were updated
-        [[NSNotificationCenter defaultCenter] postNotificationName:self.itemsUpdatedNotificationName object:self];
+        [[NSNotificationCenter defaultCenter] postNotificationName:[self itemsUpdatedNotificationName] object:self];
     }
     
     //Memory management
