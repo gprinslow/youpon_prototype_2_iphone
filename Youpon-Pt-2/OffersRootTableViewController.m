@@ -14,7 +14,6 @@
 
 #import "OffersRootTableViewController.h"
 #import "Youpon_Pt_2AppDelegate.h"
-#import "ObjectiveResource.h"
 #import "Offer.h"
 
 

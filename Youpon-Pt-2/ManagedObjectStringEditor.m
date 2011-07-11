@@ -8,7 +8,6 @@
 
 #import "ManagedObjectStringEditor.h"
 #import "Offer.h"
-#import "ObjectiveResource.h"
 
 @implementation ManagedObjectStringEditor
 
@@ -162,7 +161,7 @@
     //Objective Resource - EXPERIMENTAL
     Offer *offer = [[[Offer alloc] init] autorelease];
     [offer setValue:textField.text forKey:self.keypath];
-    [offer updateRemote];
+    //SAVE REMOTE
     
     
     
