@@ -19,6 +19,7 @@
 		85009E7C13CB9464003FB9EF /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 85009E6E13CB9464003FB9EF /* SBJsonTokeniser.m */; };
 		85009E7D13CB9464003FB9EF /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 85009E7013CB9464003FB9EF /* SBJsonUTF8Stream.m */; };
 		85009E7E13CB9464003FB9EF /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 85009E7213CB9464003FB9EF /* SBJsonWriter.m */; };
+		85009E8213CB9A69003FB9EF /* RailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85009E8113CB9A69003FB9EF /* RailsModel.m */; };
 		852DAA1E13AAAEB400432DB4 /* ManagedObjectAttributeEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 852DAA1D13AAAEB400432DB4 /* ManagedObjectAttributeEditor.m */; };
 		852DAA2213AAB4AE00432DB4 /* ManagedObjectStringEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 852DAA2113AAB4AE00432DB4 /* ManagedObjectStringEditor.m */; };
 		852DAA2513AAC4DF00432DB4 /* ManagedObjectDateEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 852DAA2413AAC4DF00432DB4 /* ManagedObjectDateEditor.m */; };
@@ -117,6 +118,8 @@
 		85009E7013CB9464003FB9EF /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		85009E7113CB9464003FB9EF /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		85009E7213CB9464003FB9EF /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		85009E8013CB9A69003FB9EF /* RailsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RailsModel.h; sourceTree = "<group>"; };
+		85009E8113CB9A69003FB9EF /* RailsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RailsModel.m; sourceTree = "<group>"; };
 		852DAA1C13AAAEB400432DB4 /* ManagedObjectAttributeEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedObjectAttributeEditor.h; sourceTree = "<group>"; };
 		852DAA1D13AAAEB400432DB4 /* ManagedObjectAttributeEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedObjectAttributeEditor.m; sourceTree = "<group>"; };
 		852DAA2013AAB4AE00432DB4 /* ManagedObjectStringEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedObjectStringEditor.h; sourceTree = "<group>"; };
@@ -261,6 +264,15 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		85009E7F13CB9A41003FB9EF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				85009E8013CB9A69003FB9EF /* RailsModel.h */,
+				85009E8113CB9A69003FB9EF /* RailsModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		8567AAD513BE31530061D98E /* Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +343,7 @@
 				85DA1FBE13984E9F0020154F /* Classes */,
 				85DA1F8F13984DF80020154F /* CoreData */,
 				85009E5813CB9464003FB9EF /* JSON */,
+				85009E7F13CB9A41003FB9EF /* Models */,
 				8567AAD513BE31530061D98E /* Objects */,
 				85DA1F8E13984DEA0020154F /* Interface */,
 				85D03FB213987DD5008D4D97 /* UIControllers */,
@@ -644,6 +657,7 @@
 				85009E7C13CB9464003FB9EF /* SBJsonTokeniser.m in Sources */,
 				85009E7D13CB9464003FB9EF /* SBJsonUTF8Stream.m in Sources */,
 				85009E7E13CB9464003FB9EF /* SBJsonWriter.m in Sources */,
+				85009E8213CB9A69003FB9EF /* RailsModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
