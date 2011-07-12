@@ -41,11 +41,11 @@
 }
 
 - (NSInteger)count {
-    return [items count];
+    return [self.items count];
 }
 
 - (NSDictionary *)item:(NSInteger)index {
-    return [items objectAtIndex:index];
+    return [self.items objectAtIndex:index];
 }
 
 - (void)refreshItems {

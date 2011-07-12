@@ -94,12 +94,12 @@ NSString *const REMOTE_OFFERS_UPDATED_NOTIFICATION_NAME = @"REMOTE_OFFER_ITEMS_U
      */
     self.offersRailsModel = [[RailsModel alloc] init];
     
-    [offersRailsModel setRequestURL:@"http://localhost:3000/offers.json"];
-    [offersRailsModel setRequestHTTPHeaderField:@"Content-Type"];
-    [offersRailsModel setRequestHTTPHeaderFieldValue:@"application/json"];
-    [offersRailsModel setRequestHTTPMethod:@"GET"];
+    [self.offersRailsModel setRequestURL:@"http://localhost:3000/offers.json"];
+    [self.offersRailsModel setRequestHTTPHeaderField:@"Content-Type"];
+    [self.offersRailsModel setRequestHTTPHeaderFieldValue:@"application/json"];
+    [self.offersRailsModel setRequestHTTPMethod:@"GET"];
     
-    [offersRailsModel setItemsUpdatedNotificationName:REMOTE_OFFERS_UPDATED_NOTIFICATION_NAME];
+    [self.offersRailsModel setItemsUpdatedNotificationName:REMOTE_OFFERS_UPDATED_NOTIFICATION_NAME];
     
     
     //Offers Rail Model - Add notification
@@ -140,7 +140,7 @@ NSString *const REMOTE_OFFERS_UPDATED_NOTIFICATION_NAME = @"REMOTE_OFFER_ITEMS_U
     [addButton release];
     
     //Added - Offer Rails Model Refresh
-    [offersRailsModel refreshItems];
+    [self.offersRailsModel refreshItems];
     
     //Added - to reload data
     [self.tableView reloadData];
@@ -219,7 +219,7 @@ NSString *const REMOTE_OFFERS_UPDATED_NOTIFICATION_NAME = @"REMOTE_OFFER_ITEMS_U
     NSDictionary *offer = [[[NSDictionary alloc] init] autorelease];
     NSDictionary *offerDetail = [[[NSDictionary alloc] init] autorelease];
     
-    offer = [offersRailsModel item:indexPath.row];
+    offer = [self.offersRailsModel item:indexPath.row];
     offerDetail = [offer objectForKey:@"offer"];
     
     cell.textLabel.text = [offerDetail objectForKey:@"title"];
