@@ -107,6 +107,12 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:[self itemsUpdatedNotificationName] object:self];
     }
     
+    //REMOVE: Debug
+    for (id item in self.items) {
+        NSLog(@"item: %@ ", item);
+    }
+    
+    
     //Memory management
     [responseString release];
     [jsonParser release];
