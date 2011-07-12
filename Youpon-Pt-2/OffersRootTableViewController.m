@@ -16,8 +16,14 @@
 #import "Youpon_Pt_2AppDelegate.h"
 #import "Offer.h"
 
+//CONSTANTS
+NSString *const REMOTE_OFFERS_UPDATED_NOTIFICATION_NAME = @"REMOTE_OFFER_ITEMS_UPDATED";
+
 
 @implementation OffersRootTableViewController
+
+@synthesize offersRailsModel;
+
 @synthesize fetchedResultsController=__fetchedResultsController;
 @synthesize editTableViewController;
 
@@ -27,12 +33,14 @@
     if (self) {
         // Custom initialization
         //editTableViewController = [[[OffersEditTableViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+        
     }
     return self;
 }
 
 - (void)dealloc
 {
+    [offersRailsModel release];
     [__fetchedResultsController release];
     [editTableViewController release];
     [super dealloc];
@@ -81,6 +89,27 @@
         [alert release];
     }
     
+    /*
+     * INIT Offers Rail Model
+     */
+    self.offersRailsModel = [[RailsModel alloc] init];
+    
+    [offersRailsModel setRequestURL:@"http://localhost:3000/offers.json"];
+    [offersRailsModel setRequestHTTPHeaderField:@"Content-Type"];
+    [offersRailsModel setRequestHTTPHeaderFieldValue:@"application/json"];
+    [offersRailsModel setRequestHTTPMethod:@"GET"];
+    
+    [offersRailsModel setItemsUpdatedNotificationName:REMOTE_OFFERS_UPDATED_NOTIFICATION_NAME];
+    
+    
+    //Offers Rail Model - Add notification
+    [[NSNotificationCenter defaultCenter] 
+        addObserver:self 
+        selector:@selector(reloadTableDataOnRemoteUpdate) 
+        name:REMOTE_OFFERS_UPDATED_NOTIFICATION_NAME 
+        object:nil];
+    
+    
 }
 
 - (void)viewDidUnload
@@ -109,6 +138,9 @@
                                   action:@selector(addOffer)];
     self.navigationItem.rightBarButtonItem = addButton;
     [addButton release];
+    
+    //Added - Offer Rails Model Refresh
+    [offersRailsModel refreshItems];
     
     //Added - to reload data
     [self.tableView reloadData];
@@ -142,24 +174,30 @@
 {
     // Return the number of sections.
     //Ch.3 edits
-    NSUInteger count = [[self.fetchedResultsController sections] count];
-    if (count == 0) {
-        count = 1;
-    }
-    return count;
+//    NSUInteger count = [[self.fetchedResultsController sections] count];
+//    if (count == 0) {
+//        count = 1;
+//    }
+//    return count;
+    
+    //MODIFIED: Offer Rails Model
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
     //Ch.3 edits
-    NSArray *sections = [self.fetchedResultsController sections];
-    NSUInteger count = 0;
-    if ([sections count]) {
-        id <NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
-        count = [sectionInfo numberOfObjects];
-    }
-    return count;
+//    NSArray *sections = [self.fetchedResultsController sections];
+//    NSUInteger count = 0;
+//    if ([sections count]) {
+//        id <NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
+//        count = [sectionInfo numberOfObjects];
+//    }
+//    return count;
+    
+    //MODIFIED: Offer Rails Model
+    return [offersRailsModel count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -173,9 +211,19 @@
     }
     
     // Configure the cell...
-    NSManagedObject *oneOffer = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [oneOffer valueForKey:@"title"];
-    cell.detailTextLabel.text = [oneOffer valueForKey:@"byline"];
+//    NSManagedObject *oneOffer = [self.fetchedResultsController objectAtIndexPath:indexPath];
+//    cell.textLabel.text = [oneOffer valueForKey:@"title"];
+//    cell.detailTextLabel.text = [oneOffer valueForKey:@"byline"];
+    
+    //MODIFIED: Offer Rails Model
+    NSDictionary *offer = [[[NSDictionary alloc] init] autorelease];
+    NSDictionary *offerDetail = [[[NSDictionary alloc] init] autorelease];
+    
+    offer = [offersRailsModel item:indexPath.row];
+    offerDetail = [offer objectForKey:@"offer"];
+    
+    cell.textLabel.text = [offerDetail objectForKey:@"title"];
+    cell.detailTextLabel.text = [offerDetail objectForKey:@"byline"];    
     
     return cell;
 }
@@ -327,6 +375,13 @@
     //??? Should refer to instance variable offersRootTableView or self.tableView here?
     [self.tableView setEditing:!editing animated:YES];
 }
+
+#pragma mark - Custom Methods - Rails Model Support
+- (void)reloadTableDataOnRemoteUpdate {
+    [self.tableView reloadData];
+}
+
+
 
 #pragma mark -
 #pragma mark Fetched results controller

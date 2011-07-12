@@ -8,16 +8,25 @@
 
 #import <UIKit/UIKit.h>
 #import "OffersEditTableViewController.h"
+#import "RailsModel.h"
 
 @interface OffersRootTableViewController : UITableViewController <NSFetchedResultsControllerDelegate, UIAlertViewDelegate> {
+    
+    RailsModel *offersRailsModel;
     
     @private
     NSFetchedResultsController *__fetchedResultsController;
     OffersEditTableViewController *editTableViewController;
 }
+
+@property (nonatomic, retain) RailsModel *offersRailsModel;
+
 @property (nonatomic, readonly) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) IBOutlet OffersEditTableViewController *editTableViewController;
 
+
 - (IBAction)toggleEdit;
+- (void)reloadTableDataOnRemoteUpdate;
+
 
 @end

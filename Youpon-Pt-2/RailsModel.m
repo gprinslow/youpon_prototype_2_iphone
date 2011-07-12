@@ -30,8 +30,6 @@
         if (!data) {
             self.data = [[NSMutableData alloc] init];
         }
-        
-        [self refreshItems];
     }
     return self;
 }
@@ -43,16 +41,14 @@
 }
 
 - (NSInteger)count {
-    return [self.items count];
+    return [items count];
 }
 
 - (NSDictionary *)item:(NSInteger)index {
-    return [self.items objectAtIndex:index];
+    return [items objectAtIndex:index];
 }
 
 - (void)refreshItems {
-    //Removed init check - now in self.init
-    
     [self sendRequest];
 }
 
