@@ -18,11 +18,13 @@
 
 //CONSTANTS
 NSString *const REMOTE_OFFERS_UPDATED_NOTIFICATION_NAME = @"REMOTE_OFFER_ITEMS_UPDATED";
+NSString *const REMOTE_OFFER_CREATED_NOTIFICATION_NAME = @"REMOTE_OFFER_CREATED";
 
 
 @implementation OffersRootTableViewController
 
 @synthesize offersRailsModel;
+@synthesize offersRailsCreateModel;
 
 @synthesize fetchedResultsController=__fetchedResultsController;
 @synthesize editTableViewController;
@@ -108,6 +110,12 @@ NSString *const REMOTE_OFFERS_UPDATED_NOTIFICATION_NAME = @"REMOTE_OFFER_ITEMS_U
         selector:@selector(reloadTableDataOnRemoteUpdate) 
         name:REMOTE_OFFERS_UPDATED_NOTIFICATION_NAME 
         object:nil];
+    
+    [[NSNotificationCenter defaultCenter] 
+     addObserver:self 
+     selector:@selector(reloadTableDataOnRemoteUpdate) 
+     name:REMOTE_OFFER_CREATED_NOTIFICATION_NAME
+     object:nil];
     
     
 }
@@ -355,7 +363,44 @@ NSString *const REMOTE_OFFERS_UPDATED_NOTIFICATION_NAME = @"REMOTE_OFFER_ITEMS_U
     offer.expirationDate = [newManagedObject valueForKey:@"expirationDate"];
     offer.numberStampsRequired = [NSNumber numberWithInt:(int)[newManagedObject valueForKey:@"numberStampsRequired"]];
     //SAVE new object
+    
+    /*
+     * INIT Offers Rail Model
+     */
+    self.offersRailsCreateModel = [[[RailsCreateModel alloc] init] autorelease];
+    
+    //NSDictionary *createOffer = [[[NSDictionary alloc] init] autorelease];
+    
+    NSMutableString *createOfferMutableStringRep = [NSMutableString stringWithString:@"{\"offer\":{"];
+    
+    [createOfferMutableStringRep appendString:@"\"id\":\"\","];
+    [createOfferMutableStringRep appendFormat:@"\"type\":\"%@\",", [newManagedObject valueForKey:@"type"]];
+    [createOfferMutableStringRep appendFormat:@"\"title\":\"%@\",", [newManagedObject valueForKey:@"title"]];
+    [createOfferMutableStringRep appendFormat:@"\"byline\":\"%@\",", [newManagedObject valueForKey:@"byline"]];
+    [createOfferMutableStringRep appendFormat:@"\"category\":\"%@\",", [newManagedObject valueForKey:@"category"]];
+    [createOfferMutableStringRep appendFormat:@"\"detailedDescription\":\"%@\",", [newManagedObject valueForKey:@"detailedDescription"]];
+    [createOfferMutableStringRep appendFormat:@"\"termsConditions\":\"%@\",", [newManagedObject valueForKey:@"termsConditions"]];
+    [createOfferMutableStringRep appendFormat:@"\"retailPrice\":\"%@\",", [newManagedObject valueForKey:@"retailPrice"]];
+    [createOfferMutableStringRep appendFormat:@"\"discountPrice\":\"%@\",", [newManagedObject valueForKey:@"discountPrice"]];
+    [createOfferMutableStringRep appendFormat:@"\"percentOff\":\"%@\",", [newManagedObject valueForKey:@"percentOff"]];
+    [createOfferMutableStringRep appendFormat:@"\"dollarValue\":\"%@\",", [newManagedObject valueForKey:@"dollarValue"]];
+    [createOfferMutableStringRep appendFormat:@"\"validationRequired\":\"%@\",", [newManagedObject valueForKey:@"validationRequired"]];    
+    
+    [createOfferMutableStringRep appendFormat:@"\"numberOffered\":\"%@\",", [newManagedObject valueForKey:@"numberOffered"]];
+    [createOfferMutableStringRep appendFormat:@"\"startDate\":\"%@\",", [newManagedObject valueForKey:@"startDate"]];
+    [createOfferMutableStringRep appendFormat:@"\"expirationDate\":\"%@\",", [newManagedObject valueForKey:@"expirationDate"]];
+    [createOfferMutableStringRep appendFormat:@"\"numberStampsRequired\":\"%@\"", [newManagedObject valueForKey:@"numberStampsRequired"]];
+    
+    [createOfferMutableStringRep appendString:@"}"];
+    [createOfferMutableStringRep appendString:@"}"];
+    
+    
+    NSString *createOfferStringRep = createOfferMutableStringRep;
+    
+    [self.offersRailsCreateModel setItemCreatedNotificationName:REMOTE_OFFER_CREATED_NOTIFICATION_NAME];
 
+    [self.offersRailsCreateModel sendCreateRequest:@"offers.json" requestURL:@"http://localhost:3000/" requestHTTPMethod:@"POST" requestHTTPParameters:createOfferStringRep];
+    
     
     
     //Instantiate detail editing controller and push onto stack
@@ -363,6 +408,7 @@ NSString *const REMOTE_OFFERS_UPDATED_NOTIFICATION_NAME = @"REMOTE_OFFER_ITEMS_U
     [self.navigationController pushViewController:editTableViewController animated:YES];    
     
 }
+                                                                                                        
 
 - (IBAction)toggleEdit {
 

@@ -57,6 +57,28 @@
     }
     return false;
 }
+
+- (BOOL)sendCreateRequest:(NSString *)model requestURL:(NSString *)requestURL requestHTTPMethod:(NSString *)requestHTTPMethod requestHTTPParameters:(NSString *)requestHTTPParameters {
+    
+    NSString *theURLString = [NSString stringWithFormat:@"%@%@", requestURL, model];
+    
+    NSMutableURLRequest *theURLRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:theURLString]];
+    
+    [theURLRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [theURLRequest setHTTPMethod:requestHTTPMethod];
+    
+    NSData *jsonDataRequest = [requestHTTPParameters dataUsingEncoding:NSUTF8StringEncoding];
+    [theURLRequest setValue:[[NSNumber numberWithInt:[jsonDataRequest length]] stringValue] forHTTPHeaderField:@"Content-Length"];
+    [theURLRequest setHTTPBody:jsonDataRequest];
+    
+    NSURLConnection *theURLConnection = [NSURLConnection connectionWithRequest:theURLRequest delegate:self];
+    
+    if (theURLConnection != nil) {
+        self.data = [[NSMutableData alloc] init];
+        return true;
+    }
+    return false;
+}
             
 
 #pragma mark - NSURLConnection Delegate methods

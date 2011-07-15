@@ -21,6 +21,6 @@
 
 
 - (BOOL)sendCreateRequest:(NSString *)model requestURL:(NSString *)requestURL requestHTTPMethod:(NSString *)requestHTTPMethod;
-
+- (BOOL)sendCreateRequest:(NSString *)model requestURL:(NSString *)requestURL requestHTTPMethod:(NSString *)requestHTTPMethod requestHTTPParameters:(NSString *)requestHTTPParameters;
 
 @end
