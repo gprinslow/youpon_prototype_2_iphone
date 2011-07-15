@@ -1,0 +1,4 @@
+== Project: Youpon Prototype 2 - iPhone application ==
+== Author: Garrison Prinslow ==
+
+This is the second prototype of the Youpon iPhone application.  It is currently set up for GET and CREATE of offers from the Rails service.  There are still parts that run off of the local Core Data model, instead of Rails.
